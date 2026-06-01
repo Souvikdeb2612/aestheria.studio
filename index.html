@@ -199,7 +199,10 @@ header.nav.scrolled{background:rgba(246,242,233,.82);backdrop-filter:blur(14px);
 .port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .port-card{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:var(--paper-2);transition:transform .35s,box-shadow .35s;cursor:pointer}
 .port-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
-.port-vis{height:200px;position:relative;overflow:hidden}
+.port-vis{height:220px;position:relative;overflow:hidden;background:var(--paper)}
+.port-vis img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.port-card:hover .port-vis img{transform:scale(1.035)}
+.port-vis.social-img{height:300px;background:var(--paper)}
 .port-meta{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
 .port-meta .t{font-family:var(--font-display);font-size:1.15rem}
 .port-meta .c{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mint-deep);background:rgba(24,201,140,.12);padding:.3rem .6rem;border-radius:100px;white-space:nowrap}
@@ -520,7 +523,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
     <div class="section-head reveal">
       <span class="eyebrow">Real examples</span>
       <h2>Actual projects and launch builds.</h2>
-      <p>A few real products, websites, and internal launch assets from our workbench — no fake client names.</p>
+      <p>Real website screenshots and generated carousel-style social creatives — no dummy color blocks or fake client claims.</p>
     </div>
     <div class="tabs reveal" id="portTabs">
       <button class="tab active" data-filter="all">All</button>
@@ -529,36 +532,29 @@ footer .logo span{color:rgba(246,242,233,.55)}
       <button class="tab" data-filter="brand">Branding</button>
     </div>
     <div class="port-grid" id="portGrid">
-      <a class="port-card reveal" data-cat="web" href="https://cafe-connect-ten.vercel.app" target="_blank" rel="noopener">
-        <div class="port-vis mk-web"><div class="frame"><div class="fbar"><i></i><i></i><i></i></div><div class="fbody" style="background:linear-gradient(135deg,#513018,#d99b5c)">Cafe Connect</div></div></div>
-        <div class="port-meta"><span class="t">Cafe Connect</span><span class="c">Live app</span></div>
-      </a>
       <a class="port-card reveal" data-cat="web" href="https://fidbac.vercel.app" target="_blank" rel="noopener">
-        <div class="port-vis mk-web"><div class="frame"><div class="fbar"><i></i><i></i><i></i></div><div class="fbody" style="background:linear-gradient(135deg,#182B55,#4E8CFF)">Fidbac</div></div></div>
+        <div class="port-vis"><img src="assets/web-fidbac.png" alt="Screenshot of Fidbac expense tracker landing page" loading="lazy"></div>
         <div class="port-meta"><span class="t">Fidbac</span><span class="c">Product UI</span></div>
       </a>
       <a class="port-card reveal" data-cat="web" href="https://souvikdeb2612.github.io/aestheria.studio/" target="_blank" rel="noopener">
-        <div class="port-vis mk-web"><div class="frame"><div class="fbar"><i></i><i></i><i></i></div><div class="fbody" style="background:linear-gradient(135deg,#0E1B14,#18C98C)">Aestheria Studio</div></div></div>
+        <div class="port-vis"><img src="assets/web-aestheria.png" alt="Screenshot of Aestheria Studio landing page" loading="lazy"></div>
         <div class="port-meta"><span class="t">Aestheria Studio</span><span class="c">Landing page</span></div>
       </a>
-      <a class="port-card reveal" data-cat="web" href="https://github.com/Souvikdeb2612/travophillic" target="_blank" rel="noopener">
-        <div class="port-vis mk-web"><div class="frame"><div class="fbar"><i></i><i></i><i></i></div><div class="fbody" style="background:linear-gradient(135deg,#0F766E,#2DD4BF)">Travophillic</div></div></div>
-        <div class="port-meta"><span class="t">Travophillic</span><span class="c">Travel web</span></div>
+      <a class="port-card reveal" data-cat="web" href="https://github.com/Souvikdeb2612/Cake-shop" target="_blank" rel="noopener">
+        <div class="port-vis"><img src="assets/web-cake-shop.png" alt="Screenshot of Shikha Cake Studio website" loading="lazy"></div>
+        <div class="port-meta"><span class="t">Cake Shop</span><span class="c">Website</span></div>
       </a>
-      <a class="port-card reveal" data-cat="brand" href="https://github.com/Souvikdeb2612/Cake-shop" target="_blank" rel="noopener">
-        <div class="port-vis mk-brand" style="background:linear-gradient(135deg,#6b2e43,#f59aa9)">
-          <div class="mono">Cake Shop</div>
-          <div class="swatches"><i style="background:#f59aa9"></i><i style="background:#fff4ec"></i><i style="background:#6b2e43"></i><i style="background:#ffd166"></i></div>
-        </div>
-        <div class="port-meta"><span class="t">Cake Shop</span><span class="c">Brand site</span></div>
+      <a class="port-card reveal" data-cat="social" href="#quote">
+        <div class="port-vis social-img"><img src="assets/social-website-fixes.jpg" alt="Generated Instagram carousel cover about website fixes" loading="lazy"></div>
+        <div class="port-meta"><span class="t">Website Fixes</span><span class="c">Carousel</span></div>
       </a>
-      <a class="port-card reveal" data-cat="social" href="https://github.com/Souvikdeb2612/conference-data" target="_blank" rel="noopener">
-        <div class="port-vis mk-soc">
-          <div style="background:#0E1B14"></div><div style="background:#18C98C"></div><div style="background:#13251B"></div>
-          <div style="background:#EE6539"></div><div style="background:#FCFAF4"></div><div style="background:#56b59c"></div>
-          <div style="background:#13251B"></div><div style="background:#18C98C"></div><div style="background:#0E1B14"></div>
-        </div>
-        <div class="port-meta"><span class="t">Conference Data</span><span class="c">Content asset</span></div>
+      <a class="port-card reveal" data-cat="social" href="#quote">
+        <div class="port-vis social-img"><img src="assets/social-launch-checklist.jpg" alt="Generated Instagram carousel cover for small business launch checklist" loading="lazy"></div>
+        <div class="port-meta"><span class="t">Launch Checklist</span><span class="c">Carousel</span></div>
+      </a>
+      <a class="port-card reveal" data-cat="social" href="#quote">
+        <div class="port-vis social-img"><img src="assets/social-cafe-concept.jpg" alt="Generated cafe promo social concept pack" loading="lazy"></div>
+        <div class="port-meta"><span class="t">Cafe Promo Pack</span><span class="c">Concept</span></div>
       </a>
     </div>
   </div>
