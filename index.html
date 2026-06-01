@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aestheria Studio — Affordable Digital Solutions for Growing Businesses</title>
+<meta name="description" content="Premium websites, social media creatives, branding, and marketing assets for growing businesses — beautiful, fast, and affordable." />
+<meta property="og:title" content="Aestheria Studio — Premium digital presence for growing businesses" />
+<meta property="og:description" content="Affordable websites, social creatives, branding, and marketing assets for growing businesses." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://aestheria.studio" />
+<meta name="theme-color" content="#0E1B14" />
+
+<!-- ===== FAVICON (inline SVG) ===== -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E1B14'/%3E%3Cpath d='M16 6c1 5 4 8 9 9-5 1-8 4-9 9-1-5-4-8-9-9 5-1 8-4 9-9Z' fill='%2318C98C'/%3E%3C/svg%3E" />
+
+<!-- ===== FONTS ===== -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   AESTHERIA STUDIO — single-file landing page
+   Palette: warm cream / green-black ink / mint / clay
+   ============================================================ */
+
+:root{
+  --paper:#F6F2E9;
+  --paper-2:#FCFAF4;
+  --ink:#121610;
+  --muted:#5E6357;
+  --line:rgba(18,22,16,.12);
+  --line-soft:rgba(18,22,16,.07);
+  --mint:#18C98C;
+  --mint-deep:#0C7A56;
+  --clay:#EE6539;
+  --clay-deep:#C84B23;
+  --forest:#0E1B14;
+  --forest-2:#13251B;
+  --shadow:0 18px 50px -22px rgba(14,27,20,.35);
+  --shadow-sm:0 8px 24px -14px rgba(14,27,20,.4);
+  --r:18px;
+  --r-lg:26px;
+  --maxw:1180px;
+  --font-display:"Fraunces",Georgia,serif;
+  --font-body:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  font-size:17px;
+  font-weight:400;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* grain overlay */
+body::before{
+  content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+section{scroll-margin-top:84px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:500;line-height:1.04;letter-spacing:-.015em}
+.eyebrow{
+  font-family:var(--font-body);font-weight:700;font-size:.74rem;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--mint-deep);display:inline-flex;align-items:center;gap:.55rem;
+}
+.eyebrow::before{content:"";width:22px;height:1.5px;background:var(--mint-deep);display:inline-block}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;font-family:var(--font-body);
+  font-weight:600;font-size:1rem;padding:.95rem 1.5rem;border-radius:100px;cursor:pointer;
+  border:1.5px solid transparent;transition:transform .25s ease,background .25s ease,box-shadow .25s ease,color .25s;
+  white-space:nowrap;line-height:1;
+}
+.btn svg{transition:transform .3s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-primary:hover{background:var(--forest);box-shadow:var(--shadow-sm)}
+.btn-accent{background:var(--mint);color:#06301F}
+.btn-accent:hover{box-shadow:0 14px 30px -12px rgba(24,201,140,.7)}
+.btn-clay{background:var(--clay);color:#fff}
+.btn-clay:hover{background:var(--clay-deep);box-shadow:0 14px 30px -12px rgba(238,101,57,.6)}
+.btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(18,22,16,.03)}
+
+/* ---------- nav ---------- */
+header.nav{position:sticky;top:0;z-index:1000;transition:background .3s,box-shadow .3s,border-color .3s;border-bottom:1px solid transparent}
+header.nav.scrolled{background:rgba(246,242,233,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line-soft)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:.55rem;font-family:var(--font-display);font-weight:600;font-size:1.32rem;letter-spacing:-.02em}
+.logo .spark{width:26px;height:26px;flex:none}
+.logo b{font-weight:600}
+.logo span{color:var(--muted);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.96rem;font-weight:500;color:var(--ink);position:relative;padding:.2rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--mint);transition:width .28s ease}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:.8rem}
+.menu-btn{display:none;background:none;border:1.5px solid var(--line);border-radius:12px;width:46px;height:46px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.menu-btn span{width:20px;height:2px;background:var(--ink);transition:.3s;border-radius:2px}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+.mobile-menu{position:fixed;inset:72px 0 0;background:var(--paper);z-index:999;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;padding:32px 28px;gap:6px;overflow-y:auto}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-family:var(--font-display);font-size:1.7rem;padding:14px 0;border-bottom:1px solid var(--line-soft)}
+.mobile-menu .btn{margin-top:20px;justify-content:center}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding:64px 0 80px;overflow:hidden}
+.blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;z-index:0;pointer-events:none}
+.blob.b1{width:520px;height:520px;background:radial-gradient(circle,#38e0a6,transparent 65%);top:-160px;right:-120px}
+.blob.b2{width:420px;height:420px;background:radial-gradient(circle,#ffb38f,transparent 62%);bottom:-160px;left:-140px;opacity:.42}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--paper-2);border:1px solid var(--line);border-radius:100px;padding:.45rem .9rem .45rem .55rem;font-size:.82rem;font-weight:600;box-shadow:var(--shadow-sm)}
+.badge .dot{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px rgba(24,201,140,.2);animation:pulse 2.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 4px rgba(24,201,140,.2)}50%{box-shadow:0 0 0 7px rgba(24,201,140,0)}}
+.hero h1{font-size:clamp(2.7rem,6.2vw,4.7rem);margin:1.3rem 0 1.3rem;letter-spacing:-.03em}
+.hero h1 em{font-style:italic;color:var(--clay)}
+.hero p.sub{font-size:clamp(1.05rem,1.5vw,1.22rem);color:var(--muted);max-width:34ch;margin-bottom:2rem}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap}
+.trust{display:flex;align-items:center;gap:1.4rem;margin-top:2.6rem;flex-wrap:wrap}
+.stars{color:var(--clay);letter-spacing:2px;font-size:1.05rem}
+.trust small{color:var(--muted);font-size:.88rem;line-height:1.4}
+.trust .vline{width:1px;height:34px;background:var(--line)}
+
+/* hero visual: stacked mockup cards */
+.hero-visual{position:relative;height:440px}
+.float-card{position:absolute;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.fc-browser{width:330px;top:0;right:0;animation:floaty 6s ease-in-out infinite}
+.fc-browser .bar{display:flex;gap:6px;padding:11px 14px;background:rgba(18,22,16,.04);border-bottom:1px solid var(--line-soft);align-items:center}
+.fc-browser .bar i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+.fc-browser .bar i:nth-child(1){background:#ef6b5e}.fc-browser .bar i:nth-child(2){background:#f6c350}.fc-browser .bar i:nth-child(3){background:var(--mint)}
+.fc-browser .screen{height:200px;background:linear-gradient(135deg,#0E1B14,#16382a);position:relative;padding:22px}
+.fc-browser .screen .tag{font-family:var(--font-display);color:#fff;font-size:1.5rem;line-height:1.1}
+.fc-browser .screen .tag b{color:var(--mint)}
+.fc-browser .screen .pill{position:absolute;bottom:20px;left:22px;background:var(--mint);color:#06301F;font-weight:700;font-size:.7rem;padding:.4rem .8rem;border-radius:100px}
+.fc-stat{width:180px;bottom:34px;left:-6px;padding:18px;animation:floaty 6s ease-in-out infinite .8s}
+.fc-stat .n{font-family:var(--font-display);font-size:2rem;color:var(--mint-deep);line-height:1}
+.fc-stat .l{font-size:.8rem;color:var(--muted);margin-top:.3rem}
+.fc-social{width:140px;bottom:-10px;right:30px;padding:0;animation:floaty 7s ease-in-out infinite .4s}
+.fc-social .top{height:90px;background:linear-gradient(135deg,#EE6539,#f59b6f)}
+.fc-social .meta{padding:12px}
+.fc-social .meta .h{height:8px;width:70%;background:var(--line);border-radius:4px}
+.fc-social .meta .h2{height:8px;width:45%;background:var(--line-soft);border-radius:4px;margin-top:7px}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* logo ticker */
+.ticker{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:20px 0;overflow:hidden;background:var(--paper-2)}
+.ticker-track{display:flex;gap:64px;width:max-content;animation:scroll 26s linear infinite;align-items:center}
+.ticker:hover .ticker-track{animation-play-state:paused}
+.ticker-track span{font-family:var(--font-display);font-size:1.3rem;color:var(--muted);font-style:italic;white-space:nowrap;opacity:.7}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* section shell */
+.section{padding:96px 0}
+.section-head{max-width:640px;margin-bottom:54px}
+.section-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.section-head h2{font-size:clamp(2rem,4.2vw,3.1rem);margin:1rem 0 1rem}
+.section-head p{color:var(--muted);font-size:1.08rem}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.svc-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:36px 32px;transition:transform .35s,box-shadow .35s,border-color .35s;position:relative;overflow:hidden}
+.svc-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(24,201,140,.05));opacity:0;transition:opacity .4s}
+.svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:transparent}
+.svc-card:hover::after{opacity:1}
+.svc-ico{width:54px;height:54px;border-radius:15px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;background:rgba(24,201,140,.12);color:var(--mint-deep)}
+.svc-card:nth-child(2) .svc-ico{background:rgba(238,101,57,.12);color:var(--clay-deep)}
+.svc-card:nth-child(3) .svc-ico{background:rgba(18,22,16,.07);color:var(--ink)}
+.svc-card:nth-child(4) .svc-ico{background:rgba(24,201,140,.12);color:var(--mint-deep)}
+.svc-ico svg{width:26px;height:26px}
+.svc-card h3{font-size:1.5rem;margin-bottom:1rem}
+.svc-list{display:flex;flex-wrap:wrap;gap:.55rem}
+.svc-list li{font-size:.9rem;font-weight:500;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:100px;padding:.4rem .85rem}
+
+/* ---------- portfolio ---------- */
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:36px}
+.tab{font-family:var(--font-body);font-weight:600;font-size:.95rem;padding:.6rem 1.2rem;border-radius:100px;border:1.5px solid var(--line);background:transparent;cursor:pointer;transition:.25s;color:var(--muted)}
+.tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab:hover:not(.active){border-color:var(--ink);color:var(--ink)}
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.port-card{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:var(--paper-2);transition:transform .35s,box-shadow .35s;cursor:pointer}
+.port-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.port-vis{height:200px;position:relative;overflow:hidden}
+.port-meta{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
+.port-meta .t{font-family:var(--font-display);font-size:1.15rem}
+.port-meta .c{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mint-deep);background:rgba(24,201,140,.12);padding:.3rem .6rem;border-radius:100px;white-space:nowrap}
+/* website mockup visual */
+.mk-web{padding:14px;background:var(--paper)}
+.mk-web .frame{height:100%;border-radius:10px;overflow:hidden;border:1px solid var(--line-soft)}
+.mk-web .fbar{display:flex;gap:5px;padding:8px 10px;background:rgba(18,22,16,.05)}
+.mk-web .fbar i{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.mk-web .fbody{height:calc(100% - 25px);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.35rem;color:#fff;text-align:center;padding:10px}
+/* social mockup */
+.mk-soc{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px}
+.mk-soc div{aspect-ratio:1}
+/* branding mockup */
+.mk-brand{display:flex;align-items:center;justify-content:center;gap:18px;flex-direction:column}
+.mk-brand .mono{font-family:var(--font-display);font-size:2.6rem;color:#fff}
+.mk-brand .swatches{display:flex;gap:8px}
+.mk-brand .swatches i{width:26px;height:26px;border-radius:50%;border:2px solid rgba(255,255,255,.6)}
+
+/* ---------- pricing ---------- */
+.price-block{margin-bottom:64px}
+.price-block:last-child{margin-bottom:0}
+.price-label{font-family:var(--font-display);font-size:1.5rem;margin-bottom:6px;display:flex;align-items:center;gap:.6rem}
+.price-label small{font-family:var(--font-body);font-size:.85rem;font-weight:500;color:var(--muted)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:28px}
+.price-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:34px 30px;position:relative;transition:transform .35s,box-shadow .35s}
+.price-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.price-card.feat{background:var(--forest);color:var(--paper);border-color:var(--forest)}
+.price-card.feat .pc-name,.price-card.feat .amt{color:#fff}
+.price-card.feat .pc-desc{color:rgba(246,242,233,.7)}
+.price-card.feat .pc-feat li{color:rgba(246,242,233,.92)}
+.price-card.feat .pc-feat li svg{color:var(--mint)}
+.tagpop{position:absolute;top:-12px;right:24px;background:var(--mint);color:#06301F;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.35rem .8rem;border-radius:100px}
+.pc-name{font-family:var(--font-display);font-size:1.4rem;margin-bottom:.4rem}
+.pc-desc{font-size:.92rem;color:var(--muted);margin-bottom:1.4rem}
+.amt{font-family:var(--font-display);font-size:2.9rem;line-height:1;margin-bottom:.3rem}
+.amt small{font-size:1rem;font-family:var(--font-body);color:var(--muted);font-weight:500}
+.pc-feat{margin:1.5rem 0;display:flex;flex-direction:column;gap:.7rem}
+.pc-feat li{display:flex;align-items:center;gap:.6rem;font-size:.94rem}
+.pc-feat li svg{width:17px;height:17px;color:var(--mint-deep);flex:none}
+.price-card .btn{width:100%;justify-content:center}
+.price-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:24px}
+
+/* ---------- special offer ---------- */
+.offer{background:var(--forest);color:var(--paper);border-radius:34px;padding:64px 56px;position:relative;overflow:hidden;margin:0 24px}
+.offer-blob{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(24,201,140,.4),transparent 65%);filter:blur(50px);top:-120px;right:-80px}
+.offer-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.offer .fire{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mint);display:inline-flex;gap:.4rem;align-items:center}
+.offer h2{font-size:clamp(2rem,4vw,3rem);color:#fff;margin:1rem 0 1.4rem}
+.offer h2 em{font-style:italic;color:var(--mint)}
+.offer-perks{display:flex;flex-direction:column;gap:.9rem;margin-bottom:2rem}
+.offer-perks li{display:flex;align-items:center;gap:.8rem;font-size:1.08rem;color:rgba(246,242,233,.95)}
+.offer-perks li .ck{width:28px;height:28px;border-radius:50%;background:rgba(24,201,140,.18);display:flex;align-items:center;justify-content:center;color:var(--mint);flex:none}
+.offer-perks li .ck svg{width:15px;height:15px}
+.countdown{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--r-lg);padding:32px}
+.countdown p.lab{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(246,242,233,.6);margin-bottom:1rem;font-weight:600}
+.cd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.6rem}
+.cd-unit{background:rgba(255,255,255,.05);border-radius:14px;padding:14px 6px;text-align:center}
+.cd-unit .num{font-family:var(--font-display);font-size:2.1rem;color:#fff;line-height:1}
+.cd-unit .u{font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(246,242,233,.55);margin-top:.3rem}
+.spots{font-size:.9rem;color:rgba(246,242,233,.75);text-align:center;margin-top:1rem}
+.spots b{color:var(--clay)}
+
+/* ---------- process ---------- */
+.proc-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;counter-reset:step;position:relative}
+.proc-step{position:relative;padding-top:8px}
+.proc-num{font-family:var(--font-display);font-size:1.05rem;font-weight:600;width:48px;height:48px;border-radius:50%;background:var(--paper-2);border:1.5px solid var(--line);display:flex;align-items:center;justify-content:center;margin-bottom:20px;color:var(--mint-deep);position:relative;z-index:2}
+.proc-step.acc .proc-num{background:var(--mint);border-color:var(--mint);color:#06301F}
+.proc-step h4{font-size:1.18rem;margin-bottom:.5rem}
+.proc-step p{font-size:.9rem;color:var(--muted)}
+.proc-line{position:absolute;top:32px;left:8%;right:8%;height:1.5px;background:var(--line);z-index:0}
+
+/* ---------- testimonials ---------- */
+.tst-note{display:inline-flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--muted);background:var(--paper-2);border:1px dashed var(--line);border-radius:100px;padding:.4rem .9rem;margin-bottom:34px}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tst-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:32px 30px;display:flex;flex-direction:column;gap:1.2rem}
+.tst-card .q{font-family:var(--font-display);font-size:1.12rem;line-height:1.45;font-style:italic}
+.tst-card .stars{color:var(--clay);font-size:.95rem;letter-spacing:1px}
+.tst-who{display:flex;align-items:center;gap:.8rem;margin-top:auto}
+.tst-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:600;color:#fff;flex:none}
+.tst-who .nm{font-weight:700;font-size:.95rem}
+.tst-who .rl{font-size:.82rem;color:var(--muted)}
+
+/* ---------- faq ---------- */
+.faq-wrap{max-width:780px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:none;text-align:left;padding:26px 0;font-family:var(--font-display);font-size:1.3rem;font-weight:500;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.faq-q .ic{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line);flex:none;display:flex;align-items:center;justify-content:center;transition:.3s;position:relative}
+.faq-q .ic::before,.faq-q .ic::after{content:"";position:absolute;background:var(--ink);border-radius:2px;transition:.3s}
+.faq-q .ic::before{width:13px;height:1.8px}
+.faq-q .ic::after{width:1.8px;height:13px}
+.faq-item.open .faq-q .ic{background:var(--mint);border-color:var(--mint)}
+.faq-item.open .faq-q .ic::after{transform:scaleY(0)}
+.faq-item.open .faq-q .ic::before,.faq-item.open .faq-q .ic::after{background:#06301F}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.faq-a p{padding-bottom:26px;color:var(--muted);font-size:1.02rem;max-width:64ch}
+
+/* ---------- contact + form ---------- */
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start}
+.contact-info h2{font-size:clamp(2rem,4vw,3rem);margin:1rem 0 1.2rem}
+.contact-info p.intro{color:var(--muted);font-size:1.08rem;margin-bottom:2.2rem;max-width:42ch}
+.ch-list{display:flex;flex-direction:column;gap:14px}
+.ch{display:flex;align-items:center;gap:1rem;padding:18px 20px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);transition:.3s}
+.ch:hover{transform:translateX(4px);border-color:var(--mint);box-shadow:var(--shadow-sm)}
+.ch-ic{width:46px;height:46px;border-radius:13px;background:rgba(24,201,140,.12);color:var(--mint-deep);display:flex;align-items:center;justify-content:center;flex:none}
+.ch-ic svg{width:22px;height:22px}
+.ch .lab{font-size:.78rem;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+.ch .val{font-weight:600;font-size:1.02rem}
+
+.form-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:40px 38px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.form-card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--mint),var(--clay))}
+.form-card h3{font-size:1.7rem;margin-bottom:.4rem}
+.form-card .fsub{color:var(--muted);font-size:.96rem;margin-bottom:1.8rem}
+.field{margin-bottom:1.1rem}
+.field label{display:block;font-size:.82rem;font-weight:600;margin-bottom:.45rem;letter-spacing:.02em}
+.field label .req{color:var(--clay)}
+.field input,.field select,.field textarea{
+  width:100%;font-family:var(--font-body);font-size:1rem;padding:.85rem 1rem;border:1.5px solid var(--line);
+  border-radius:12px;background:var(--paper);color:var(--ink);transition:.25s;
+}
+.field textarea{resize:vertical;min-height:90px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 4px rgba(24,201,140,.15)}
+.field.err input,.field.err select{border-color:var(--clay)}
+.err-msg{color:var(--clay-deep);font-size:.8rem;margin-top:.35rem;display:none}
+.field.err .err-msg{display:block}
+.form-card .btn{width:100%;justify-content:center;margin-top:.5rem}
+.form-note{font-size:.8rem;color:var(--muted);text-align:center;margin-top:1rem}
+.form-success{display:none;text-align:center;padding:30px 10px}
+.form-success.show{display:block;animation:fadeup .5s ease}
+.form-success .ck-big{width:70px;height:70px;border-radius:50%;background:rgba(24,201,140,.15);color:var(--mint-deep);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.form-success h3{margin-bottom:.5rem}
+.form-success p{color:var(--muted)}
+.form-banner{display:none;background:rgba(238,101,57,.1);border:1px solid rgba(238,101,57,.3);color:var(--clay-deep);border-radius:12px;padding:.8rem 1rem;font-size:.86rem;margin-bottom:1.2rem}
+.form-banner.show{display:block}
+
+/* ---------- footer ---------- */
+footer{background:var(--forest);color:var(--paper);padding:72px 0 36px;margin-top:0}
+.foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+footer .logo{color:#fff;margin-bottom:1rem}
+footer .logo span{color:rgba(246,242,233,.55)}
+.foot-about{color:rgba(246,242,233,.65);font-size:.95rem;max-width:34ch;line-height:1.65}
+.foot-col h5{font-family:var(--font-body);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(246,242,233,.5);margin-bottom:1.1rem;font-weight:700}
+.foot-col a{display:block;color:rgba(246,242,233,.82);font-size:.95rem;padding:.35rem 0;transition:.25s}
+.foot-col a:hover{color:var(--mint);padding-left:4px}
+.foot-bottom{border-top:1px solid rgba(246,242,233,.12);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.foot-bottom p{font-size:.86rem;color:rgba(246,242,233,.55)}
+.foot-bottom a{color:rgba(246,242,233,.7);font-size:.86rem}
+.foot-soc{display:flex;gap:10px}
+.foot-soc a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:.3s}
+.foot-soc a:hover{background:var(--mint);color:#06301F}
+.foot-soc svg{width:18px;height:18px}
+
+/* ---------- reveal animation ---------- */
+.reveal{opacity:1;transform:none;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@keyframes fadeup{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero .badge{animation:fadeup .6s ease both}
+.hero h1{animation:fadeup .7s ease .1s both}
+.hero p.sub{animation:fadeup .7s ease .2s both}
+.hero-btns{animation:fadeup .7s ease .3s both}
+.trust{animation:fadeup .7s ease .4s both}
+.hero-visual{animation:fadeup .9s ease .3s both}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:30px}
+  .hero-visual{height:360px;max-width:420px}
+  .offer-inner{grid-template-columns:1fr;gap:32px}
+  .contact-grid{grid-template-columns:1fr;gap:34px}
+  .proc-grid{grid-template-columns:repeat(2,1fr);gap:28px}
+  .proc-line{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:760px){
+  .nav-links{display:none}
+  .nav-cta .btn-ghost{display:none}
+  .menu-btn{display:flex}
+  .svc-grid{grid-template-columns:1fr}
+  .port-grid{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr}
+  .tst-grid{grid-template-columns:1fr}
+  .section{padding:68px 0}
+  .offer{padding:44px 28px;margin:0 16px;border-radius:26px}
+  .form-card{padding:30px 24px}
+  .foot-grid{grid-template-columns:1fr}
+  .wrap{padding:0 18px}
+}
+@media(max-width:480px){
+  .proc-grid{grid-template-columns:1fr}
+  .cd-grid{gap:6px}
+  .cd-unit .num{font-size:1.7rem}
+  .hero h1{font-size:2.5rem}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .float-card{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#home" class="logo" aria-label="Aestheria Studio home">
+      <svg class="spark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0E1B14"/><path d="M16 6c1 5 4 8 9 9-5 1-8 4-9 9-1-5-4-8-9-9 5-1 8-4 9-9Z" fill="#18C98C"/></svg>
+      <span class="logo-text"><b>Aestheria</b> <span>Studio</span></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#portfolio" class="btn btn-ghost">View work</a>
+      <a href="#quote" class="btn btn-accent">Get a free quote</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services">Services</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#process">Process</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+  <a href="#quote" class="btn btn-accent">Get a free quote</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="badge"><span class="dot"></span>Now booking first clients · launch offer active</span>
+      <h1>Beautiful digital presence for <em>growing</em> businesses.</h1>
+      <p class="sub">Websites, social creatives, branding, and marketing assets that help small businesses look premium online — without the agency price tag.</p>
+      <div class="hero-btns">
+        <a href="#portfolio" class="btn btn-primary">View portfolio <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#pricing" class="btn btn-ghost">View pricing</a>
+      </div>
+      <div class="trust">
+        <div><div class="stars">★★★★★</div><small>Loved by small business owners</small></div>
+        <div class="vline"></div>
+        <div><small><b style="color:var(--ink);font-size:1.05rem">Fast</b> turnaround<br>Most projects in 5–10 days</small></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="float-card fc-browser">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="screen">
+          <div class="tag">Your business,<br><b>beautifully online.</b></div>
+          <span class="pill">Live in days</span>
+        </div>
+      </div>
+      <div class="float-card fc-stat">
+        <div class="n">+180%</div>
+        <div class="l">avg. boost in online enquiries*</div>
+      </div>
+      <div class="float-card fc-social">
+        <div class="top"></div>
+        <div class="meta"><div class="h"></div><div class="h2"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Websites</span><span>·</span><span>Social Media</span><span>·</span><span>Branding</span><span>·</span><span>Logos</span><span>·</span><span>Flyers & Menus</span><span>·</span><span>Ad Creatives</span><span>·</span>
+    <span>Websites</span><span>·</span><span>Social Media</span><span>·</span><span>Branding</span><span>·</span><span>Logos</span><span>·</span><span>Flyers & Menus</span><span>·</span><span>Ad Creatives</span><span>·</span>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">What we do</span>
+      <h2>Everything your business needs to look premium online.</h2>
+      <p>One studio for your website, social content, and brand assets — so every touchpoint feels consistent and premium.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div>
+        <h3>Website Design</h3>
+        <ul class="svc-list"><li>Landing Pages</li><li>Business Websites</li><li>E-commerce Websites</li><li>Website Redesigns</li></ul>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div>
+        <h3>Social Media Design</h3>
+        <ul class="svc-list"><li>Instagram Posts</li><li>Carousels</li><li>Story Templates</li><li>Reels Covers</li></ul>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3c3 4 3 14 0 18M3 12h18"/></svg></div>
+        <h3>Branding</h3>
+        <ul class="svc-list"><li>Logos</li><li>Brand Kits</li><li>Business Cards</li><li>Brochures</li></ul>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v6H4zM4 14h10v6H4zM18 14h2v6h-2z"/></svg></div>
+        <h3>Marketing Assets</h3>
+        <ul class="svc-list"><li>Flyers</li><li>Posters</li><li>Menus</li><li>Ad Creatives</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PORTFOLIO ============ -->
+<section class="section" id="portfolio" style="background:var(--paper-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Recent work</span>
+      <h2>Launch-ready work, designed to convert.</h2>
+      <p>Websites, social creatives, and brand identities crafted for local businesses, creators, and growing teams.</p>
+    </div>
+    <div class="tabs reveal" id="portTabs">
+      <button class="tab active" data-filter="all">All</button>
+      <button class="tab" data-filter="web">Websites</button>
+      <button class="tab" data-filter="social">Social Media</button>
+      <button class="tab" data-filter="brand">Branding</button>
+    </div>
+    <div class="port-grid" id="portGrid">
+      <!-- websites -->
+      <div class="port-card reveal" data-cat="web">
+        <div class="port-vis mk-web"><div class="frame"><div class="fbar"><i></i><i></i><i></i></div><div class="fbody" style="background:linear-gradient(135deg,#8a3b1e,#d9692f)">Bella Cucina</div></div></div>
+        <div class="port-meta"><span class="t">Restaurant</span><span class="c">Website</span></div>
+      </div>
+      <div class="port-card reveal" data-cat="web">
+        <div class="port-vis mk-web"><div class="frame"><div class="fbar"><i></i><i></i><i></i></div><div class="fbody" style="background:linear-gradient(135deg,#2a5d52,#56b59c)">Lumière Med Spa</div></div></div>
+        <div class="port-meta"><span class="t">Med Spa</span><span class="c">Website</span></div>
+      </div>
+      <div class="port-card reveal" data-cat="web">
+        <div class="port-vis mk-web"><div class="frame"><div class="fbar"><i></i><i></i><i></i></div><div class="fbody" style="background:linear-gradient(135deg,#7a2e57,#cf6fa0)">Velvet Beauty</div></div></div>
+        <div class="port-meta"><span class="t">Beauty Brand</span><span class="c">Website</span></div>
+      </div>
+      <div class="port-card reveal" data-cat="web">
+        <div class="port-vis mk-web"><div class="frame"><div class="fbar"><i></i><i></i><i></i></div><div class="fbody" style="background:linear-gradient(135deg,#33414d,#6b7f8f)">Apex Build Co.</div></div></div>
+        <div class="port-meta"><span class="t">Construction</span><span class="c">Website</span></div>
+      </div>
+      <div class="port-card reveal" data-cat="web">
+        <div class="port-vis mk-web"><div class="frame"><div class="fbar"><i></i><i></i><i></i></div><div class="fbody" style="background:linear-gradient(135deg,#14342a,#2f8c66)">Northpeak Realty</div></div></div>
+        <div class="port-meta"><span class="t">Real Estate</span><span class="c">Website</span></div>
+      </div>
+      <!-- social -->
+      <div class="port-card reveal" data-cat="social">
+        <div class="port-vis mk-soc">
+          <div style="background:#0E1B14"></div><div style="background:#18C98C"></div><div style="background:#13251B"></div>
+          <div style="background:#EE6539"></div><div style="background:#0E1B14"></div><div style="background:#56b59c"></div>
+          <div style="background:#13251B"></div><div style="background:#18C98C"></div><div style="background:#0E1B14"></div>
+        </div>
+        <div class="port-meta"><span class="t">Carousel set</span><span class="c">Social</span></div>
+      </div>
+      <div class="port-card reveal" data-cat="social">
+        <div class="port-vis mk-soc">
+          <div style="background:#EE6539"></div><div style="background:#f0a070"></div><div style="background:#8a3b1e"></div>
+          <div style="background:#f0a070"></div><div style="background:#EE6539"></div><div style="background:#fff4ec"></div>
+          <div style="background:#8a3b1e"></div><div style="background:#fff4ec"></div><div style="background:#EE6539"></div>
+        </div>
+        <div class="port-meta"><span class="t">Feed posts</span><span class="c">Social</span></div>
+      </div>
+      <div class="port-card reveal" data-cat="social">
+        <div class="port-vis mk-soc" style="grid-template-columns:repeat(2,1fr)">
+          <div style="background:linear-gradient(160deg,#2a5d52,#56b59c)"></div><div style="background:linear-gradient(160deg,#7a2e57,#cf6fa0)"></div>
+          <div style="background:linear-gradient(160deg,#33414d,#6b7f8f)"></div><div style="background:linear-gradient(160deg,#0E1B14,#18C98C)"></div>
+        </div>
+        <div class="port-meta"><span class="t">Story templates</span><span class="c">Social</span></div>
+      </div>
+      <!-- branding -->
+      <div class="port-card reveal" data-cat="brand">
+        <div class="port-vis mk-brand" style="background:linear-gradient(135deg,#0E1B14,#16382a)">
+          <div class="mono">N&nbsp;✦</div>
+          <div class="swatches"><i style="background:#18C98C"></i><i style="background:#fff"></i><i style="background:#0E1B14"></i><i style="background:#EE6539"></i></div>
+        </div>
+        <div class="port-meta"><span class="t">Logo &amp; mark</span><span class="c">Branding</span></div>
+      </div>
+      <div class="port-card reveal" data-cat="brand">
+        <div class="port-vis mk-brand" style="background:linear-gradient(135deg,#7a2e57,#cf6fa0)">
+          <div class="mono" style="font-style:italic">Velvet</div>
+          <div class="swatches"><i style="background:#cf6fa0"></i><i style="background:#fff"></i><i style="background:#7a2e57"></i><i style="background:#f0d9e6"></i></div>
+        </div>
+        <div class="port-meta"><span class="t">Brand kit</span><span class="c">Branding</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center">Packages</span>
+      <h2>Simple launch pricing.</h2>
+      <p>Clear starter packages with no surprises. Pick a plan or request a custom quote — built for fast launch and early traction.</p>
+    </div>
+
+    <!-- website packages -->
+    <div class="price-block reveal">
+      <div class="price-label">Website Packages <small>· built for any stage</small></div>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="pc-name">Starter Website</div>
+          <div class="pc-desc">A clean one-pager to get you online fast.</div>
+          <div class="amt">$199</div>
+          <div class="amt"><small>1–3 pages</small></div>
+          <ul class="pc-feat">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Mobile-friendly design</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Contact form</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Basic SEO setup</li>
+          </ul>
+          <a href="#quote" class="btn btn-ghost">Get started</a>
+        </div>
+        <div class="price-card feat">
+          <span class="tagpop">Most popular</span>
+          <div class="pc-name">Business Website</div>
+          <div class="pc-desc">A full site to win customers and look the part.</div>
+          <div class="amt">$399</div>
+          <div class="amt"><small>up to 5 pages</small></div>
+          <ul class="pc-feat">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Everything in Starter</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Custom layout & branding</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Google Maps & socials</li>
+          </ul>
+          <a href="#quote" class="btn btn-accent">Get started</a>
+        </div>
+        <div class="price-card">
+          <div class="pc-name">Premium Website</div>
+          <div class="pc-desc">Fully custom, e-commerce or advanced features.</div>
+          <div class="amt">$699<small>+</small></div>
+          <div class="amt"><small>custom build</small></div>
+          <ul class="pc-feat">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Everything in Business</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Online store / booking</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Priority support</li>
+          </ul>
+          <a href="#quote" class="btn btn-ghost">Get started</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- social packages -->
+    <div class="price-block reveal">
+      <div class="price-label">Social Media Packages <small>· monthly creative, ready to post</small></div>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="pc-name">Basic</div>
+          <div class="pc-desc">Keep your feed alive and consistent.</div>
+          <div class="amt">$49</div>
+          <div class="amt"><small>10 posts / month</small></div>
+          <ul class="pc-feat">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Custom-designed posts</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>On-brand templates</li>
+          </ul>
+          <a href="#quote" class="btn btn-ghost">Get started</a>
+        </div>
+        <div class="price-card feat">
+          <span class="tagpop">Best value</span>
+          <div class="pc-name">Growth</div>
+          <div class="pc-desc">Enough content to actually grow a following.</div>
+          <div class="amt">$99</div>
+          <div class="amt"><small>30 posts / month</small></div>
+          <ul class="pc-feat">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Posts + carousels</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Story templates</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Monthly content plan</li>
+          </ul>
+          <a href="#quote" class="btn btn-accent">Get started</a>
+        </div>
+        <div class="price-card">
+          <div class="pc-name">Premium</div>
+          <div class="pc-desc">A full content engine for serious brands.</div>
+          <div class="amt">$179</div>
+          <div class="amt"><small>60 posts / month</small></div>
+          <ul class="pc-feat">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Posts, carousels & reels covers</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Ad creatives included</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Priority delivery</li>
+          </ul>
+          <a href="#quote" class="btn btn-ghost">Get started</a>
+        </div>
+      </div>
+    </div>
+    <p class="price-note">Prices shown are starting rates. Need something specific? <a href="#quote" style="color:var(--mint-deep);font-weight:600;border-bottom:1.5px solid var(--mint)">Ask for a custom quote →</a></p>
+  </div>
+</section>
+
+<!-- ============ SPECIAL OFFER ============ -->
+<section class="section" id="offer" style="padding-top:0">
+  <div class="offer reveal">
+    <div class="offer-blob"></div>
+    <div class="offer-inner">
+      <div>
+        <span class="fire">🔥 New client offer</span>
+        <h2>Get <em>20% off</em> your first project.</h2>
+        <ul class="offer-perks">
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>20% off your first project</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free homepage mockup before you pay</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free website audit of your current site</li>
+        </ul>
+        <a href="#quote" class="btn btn-accent">Claim the offer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="countdown">
+        <p class="lab">Offer ends in</p>
+        <div class="cd-grid">
+          <div class="cd-unit"><div class="num" id="cd-d">00</div><div class="u">Days</div></div>
+          <div class="cd-unit"><div class="num" id="cd-h">00</div><div class="u">Hrs</div></div>
+          <div class="cd-unit"><div class="num" id="cd-m">00</div><div class="u">Min</div></div>
+          <div class="cd-unit"><div class="num" id="cd-s">00</div><div class="u">Sec</div></div>
+        </div>
+        <p class="spots">Only <b>3 launch-offer spots</b> left this month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section class="section" id="process">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center">How it works</span>
+      <h2>Five simple steps to launch.</h2>
+      <p>No jargon, no runaround. Here's exactly how we'll work together.</p>
+    </div>
+    <div class="proc-grid">
+      <div class="proc-line" aria-hidden="true"></div>
+      <div class="proc-step acc reveal"><div class="proc-num">1</div><h4>Contact us</h4><p>Reach out with what you need — it's free and no pressure.</p></div>
+      <div class="proc-step reveal"><div class="proc-num">2</div><h4>Discuss requirements</h4><p>We learn about your business, goals, and style.</p></div>
+      <div class="proc-step reveal"><div class="proc-num">3</div><h4>Receive proposal</h4><p>A clear quote and timeline, sent straight to you.</p></div>
+      <div class="proc-step reveal"><div class="proc-num">4</div><h4>Design & revisions</h4><p>We design, you review, we refine until it's right.</p></div>
+      <div class="proc-step reveal"><div class="proc-num">5</div><h4>Delivery</h4><p>Your finished project, ready to launch and grow.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section" id="testimonials" style="background:var(--paper-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center">Kind words</span>
+      <h2>What people are saying.</h2>
+    </div>
+    <div style="text-align:center"><span class="tst-note reveal">★ Sample reviews — we'll swap these for real client feedback as projects roll in.</span></div>
+    <div class="tst-grid">
+      <div class="tst-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="q">"They turned my idea into a website in under a week. It looks like something a much bigger company would have. Bookings went up almost immediately."</p>
+        <div class="tst-who"><div class="tst-av" style="background:#2a5d52">M</div><div><div class="nm">Maya R.</div><div class="rl">Owner, Bloom Café</div></div></div>
+      </div>
+      <div class="tst-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="q">"Affordable but not cheap-looking — that was the part that surprised me. The social posts they design keep my feed looking professional with zero effort."</p>
+        <div class="tst-who"><div class="tst-av" style="background:#EE6539">D</div><div><div class="nm">Daniel K.</div><div class="rl">Founder, Apex Fitness</div></div></div>
+      </div>
+      <div class="tst-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="q">"Easy to work with and genuinely fast. They handled the logo, the brand kit, and the website so everything finally matches. Highly recommend."</p>
+        <div class="tst-who"><div class="tst-av" style="background:#7a2e57">S</div><div><div class="nm">Sara L.</div><div class="rl">Director, Velvet Beauty</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head center reveal">
+      <span class="eyebrow" style="justify-content:center">Questions</span>
+      <h2>Good to know.</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item reveal">
+        <button class="faq-q">How long does delivery take?<span class="ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Most projects are delivered within 5–10 days. A simple landing page can be ready in just a few days, while larger custom sites take a little longer. We'll always confirm a clear timeline in your proposal before we begin.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do I need hosting?<span class="ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Yes — your website needs hosting and a domain to go live, but don't worry. We'll guide you through the easiest, most affordable options and can set everything up for you so it's completely hassle-free.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Do you provide content?<span class="ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>We can! If you have text and images ready, great. If not, we can help write your copy and source clean, license-free visuals so your site looks polished from day one. Just let us know what you need in your quote.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">How many revisions are included?<span class="ic" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Every package includes revision rounds so we can get the details just right. We'll keep refining the design based on your feedback until you're happy with the result — your satisfaction is the goal.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT + QUOTE ============ -->
+<section class="section" id="contact" style="background:var(--paper-2);border-top:1px solid var(--line-soft)">
+  <div class="wrap contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Let's build something great.</h2>
+      <p class="intro">Have a question or ready to start? Reach out any way you like — or grab a free quote and we'll reply within one business day.</p>
+      <div class="ch-list">
+        <a class="ch" href="mailto:hello@aestheria.studio">
+          <span class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span><span class="lab">Email</span><br><span class="val">hello@aestheria.studio</span></span>
+        </a>
+        <a class="ch" href="https://wa.me/15550000000" target="_blank" rel="noopener">
+          <span class="ch-ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Zm4.4-6c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8 1-.3.1-.5 0a6.6 6.6 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.2a.4.4 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-1 2.2c0 1.3 1 2.6 1.1 2.7s1.9 2.9 4.6 4c1.7.7 2.3.8 3.1.7a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .1-1.2c0-.1-.2-.1-.4-.2Z"/></svg></span>
+          <span><span class="lab">WhatsApp</span><br><span class="val">+1 (555) 000-0000</span></span>
+        </a>
+        <a class="ch" href="https://instagram.com/aestheria.studio" target="_blank" rel="noopener">
+          <span class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span>
+          <span><span class="lab">Instagram</span><br><span class="val">@aestheria.studio</span></span>
+        </a>
+      </div>
+    </div>
+
+    <!-- LEAD CAPTURE -->
+    <div class="form-card reveal" id="quote">
+      <div id="formView">
+        <h3>Get a free quote</h3>
+        <p class="fsub">Tell us a little about your project — no commitment, just a quick reply with pricing.</p>
+        <div class="form-banner" id="formBanner"></div>
+        <form id="quoteForm" novalidate>
+          <div class="field" id="f-name">
+            <label for="name">Your name <span class="req">*</span></label>
+            <input type="text" id="name" name="name" placeholder="Jane Doe" autocomplete="name" />
+            <span class="err-msg">Please enter your name.</span>
+          </div>
+          <div class="field" id="f-biz">
+            <label for="business">Business name</label>
+            <input type="text" id="business" name="business" placeholder="Your business or brand" autocomplete="organization" />
+          </div>
+          <div class="field" id="f-email">
+            <label for="email">Email <span class="req">*</span></label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+            <span class="err-msg">Please enter a valid email address.</span>
+          </div>
+          <div class="field" id="f-service">
+            <label for="service">Service needed <span class="req">*</span></label>
+            <select id="service" name="service">
+              <option value="" disabled selected>Choose a service…</option>
+              <option>Website Design</option>
+              <option>Landing Page</option>
+              <option>Business Website</option>
+              <option>E-commerce Website</option>
+              <option>Website Redesign</option>
+              <option>Social Media Design</option>
+              <option>Branding / Logo</option>
+              <option>Marketing Assets (flyers, ads, menus)</option>
+              <option>Not sure yet / Something else</option>
+            </select>
+            <span class="err-msg">Please select a service.</span>
+          </div>
+          <div class="field">
+            <label for="details">Anything else? (optional)</label>
+            <textarea id="details" name="details" placeholder="Tell us about your project, timeline, or budget…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-clay" id="submitBtn">Send my free quote request <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <p class="form-note">We'll reply within 1 business day. No spam, ever.</p>
+        </form>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="ck-big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="32" height="32"><path d="M5 13l4 4L19 7"/></svg></div>
+        <h3>Thank you!</h3>
+        <p>Your quote request is on its way. We'll get back to you within one business day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#home" class="logo"><svg class="spark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#18C98C"/><path d="M16 6c1 5 4 8 9 9-5 1-8 4-9 9-1-5-4-8-9-9 5-1 8-4 9-9Z" fill="#0E1B14"/></svg> <span><b>Aestheria</b> <span>Studio</span></span></a>
+        <p class="foot-about">Premium-looking websites, social creatives, and brand kits for growing businesses. Big-brand polish, small-business pricing.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Services</h5>
+        <a href="#services">Website Design</a>
+        <a href="#services">Social Media Design</a>
+        <a href="#services">Branding</a>
+        <a href="#services">Marketing Assets</a>
+      </div>
+      <div class="foot-col">
+        <h5>Studio</h5>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="foot-col">
+        <h5>Get started</h5>
+        <a href="#quote">Get a free quote</a>
+        <a href="mailto:hello@aestheria.studio">Email us</a>
+        <a href="https://wa.me/15550000000" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://instagram.com/aestheria.studio" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© <span id="year">2026</span> Aestheria Studio. All rights reserved.</p>
+      <div class="foot-soc">
+        <a href="https://instagram.com/aestheria.studio" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://wa.me/15550000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.5 15.2L2 22l4.9-1.4A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-2.9.8.8-2.8-.2-.3A8 8 0 1 1 12 20Z"/></svg></a>
+        <a href="mailto:hello@aestheria.studio" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   CONFIG — set these two values before you deploy
+   ============================================================ */
+// Optional: add a Formspree endpoint later. Until then, quote requests open an email draft.
+const FORMSPREE_ENDPOINT = "";
+const CONTACT_EMAIL = "hello@aestheria.studio";
+
+(function(){
+  "use strict";
+
+  /* ---- year ---- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* ---- sticky nav shadow ---- */
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* ---- mobile menu ---- */
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const toggleMenu = (force) => {
+    const open = force !== undefined ? force : !mobileMenu.classList.contains('open');
+    mobileMenu.classList.toggle('open', open);
+    menuBtn.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  };
+  menuBtn.addEventListener('click', () => toggleMenu());
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
+  /* ---- scroll reveal ---- */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  /* ---- portfolio filter ---- */
+  const tabs = document.querySelectorAll('#portTabs .tab');
+  const cards = document.querySelectorAll('#portGrid .port-card');
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const f = tab.dataset.filter;
+    cards.forEach(c => {
+      const show = (f === 'all' || c.dataset.cat === f);
+      c.style.display = show ? '' : 'none';
+    });
+  }));
+
+  /* ---- FAQ accordion ---- */
+  document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const ans = q.nextElementSibling;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('open');
+      i.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if(!isOpen){ item.classList.add('open'); ans.style.maxHeight = ans.scrollHeight + 'px'; }
+  }));
+
+  /* ---- countdown (to end of current month) ---- */
+  const pad = n => String(n).padStart(2,'0');
+  const cdD=document.getElementById('cd-d'),cdH=document.getElementById('cd-h'),cdM=document.getElementById('cd-m'),cdS=document.getElementById('cd-s');
+  function tick(){
+    const now = new Date();
+    const end = new Date(now.getFullYear(), now.getMonth()+1, 0, 23, 59, 59); // last day of month
+    let diff = Math.max(0, Math.floor((end - now)/1000));
+    const d = Math.floor(diff/86400); diff%=86400;
+    const h = Math.floor(diff/3600); diff%=3600;
+    const m = Math.floor(diff/60); const s = diff%60;
+    cdD.textContent=pad(d); cdH.textContent=pad(h); cdM.textContent=pad(m); cdS.textContent=pad(s);
+  }
+  tick(); setInterval(tick, 1000);
+
+  /* ---- quote form ---- */
+  const form = document.getElementById('quoteForm');
+  const banner = document.getElementById('formBanner');
+  const submitBtn = document.getElementById('submitBtn');
+  const formView = document.getElementById('formView');
+  const formSuccess = document.getElementById('formSuccess');
+
+  const setErr = (id, on) => document.getElementById(id).classList.toggle('err', on);
+  const validEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const service = form.service.value;
+
+    let ok = true;
+    setErr('f-name', !name); if(!name) ok=false;
+    setErr('f-email', !validEmail(email)); if(!validEmail(email)) ok=false;
+    setErr('f-service', !service); if(!service) ok=false;
+    if(!ok) return;
+
+    // No backend connected yet: open a prefilled email draft so launch leads are not lost.
+    if(!FORMSPREE_ENDPOINT){
+      const data = new FormData(form);
+      const subject = encodeURIComponent('New quote request — Aestheria Studio');
+      const body = encodeURIComponent([
+        `Name: ${data.get('name') || ''}`,
+        `Business: ${data.get('business') || ''}`,
+        `Email: ${data.get('email') || ''}`,
+        `Service: ${data.get('service') || ''}`,
+        '',
+        `Details: ${data.get('details') || ''}`
+      ].join('\n'));
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+      banner.textContent = 'Opening your email app with the request pre-filled. If it does not open, email hello@aestheria.studio directly.';
+      banner.classList.add('show');
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+    try{
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method:'POST',
+        headers:{'Accept':'application/json'},
+        body:new FormData(form)
+      });
+      if(res.ok){
+        formView.style.display='none';
+        formSuccess.classList.add('show');
+      } else {
+        throw new Error('Submission failed');
+      }
+    }catch(err){
+      banner.textContent = '⚠️ Something went wrong sending your request. Please email us at hello@aestheria.studio instead.';
+      banner.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = 'Try again <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+    }
+  });
+})();
+</script>
+</body>
+</html>
