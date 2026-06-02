@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Aestheria Studio — Affordable Digital Solutions for Growing Businesses</title>
-<meta name="description" content="Premium websites, social media creatives, branding, and marketing assets for growing businesses — beautiful, fast, and affordable." />
-<meta property="og:title" content="Aestheria Studio — Premium digital presence for growing businesses" />
-<meta property="og:description" content="Affordable websites, social creatives, branding, and marketing assets for growing businesses." />
+<meta name="description" content="Affordable websites, branding, and social media designs for small businesses that want to grow online. Starting from $49 with free website audits." />
+<meta property="og:title" content="Aestheria Studio — Affordable Websites & Digital Design for Growing Businesses" />
+<meta property="og:description" content="Websites, branding, and social media designs that help small businesses grow online — with visible pricing and free audits." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://aestheria.studio" />
 <meta name="theme-color" content="#0E1B14" />
@@ -245,6 +245,18 @@ header.nav.scrolled{background:rgba(246,242,233,.82);backdrop-filter:blur(14px);
 .price-card .btn{width:100%;justify-content:center}
 .price-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:24px}
 
+/* ---------- trust + starting prices ---------- */
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
+.proof-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px 24px;box-shadow:var(--shadow-sm)}
+.proof-card .n{font-family:var(--font-display);font-size:2.15rem;color:var(--mint-deep);line-height:1}
+.proof-card .l{font-weight:700;margin-top:.45rem}
+.proof-card p{color:var(--muted);font-size:.92rem;margin-top:.35rem}
+.why-grid,.start-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.why-card,.start-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:22px 18px}
+.why-card b,.start-card b{display:block;font-family:var(--font-display);font-size:1.12rem;margin-bottom:.3rem}
+.why-card span,.start-card span{display:block;color:var(--muted);font-size:.9rem}
+.start-card strong{display:block;font-family:var(--font-display);font-size:1.9rem;color:var(--mint-deep);line-height:1;margin-top:.65rem}
+
 /* ---------- special offer ---------- */
 .offer{background:var(--forest);color:var(--paper);border-radius:34px;padding:64px 56px;position:relative;overflow:hidden;margin:0 24px}
 .offer-blob{position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(24,201,140,.4),transparent 65%);filter:blur(50px);top:-120px;right:-80px}
@@ -374,6 +386,8 @@ footer .logo span{color:rgba(246,242,233,.55)}
   .proc-grid{grid-template-columns:repeat(2,1fr);gap:28px}
   .proc-line{display:none}
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .proof-grid{grid-template-columns:1fr 1fr}
+  .why-grid,.start-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:760px){
   .nav-links{display:none}
@@ -388,6 +402,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
   .form-card{padding:30px 24px}
   .foot-grid{grid-template-columns:1fr}
   .wrap{padding:0 18px}
+  .proof-grid,.why-grid,.start-grid{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .proc-grid{grid-template-columns:1fr}
@@ -421,7 +436,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
     </nav>
     <div class="nav-cta">
       <a href="#portfolio" class="btn btn-ghost">View work</a>
-      <a href="#quote" class="btn btn-accent">Get a free quote</a>
+      <a href="#quote" class="btn btn-accent">Get a free website audit</a>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -434,7 +449,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
   <a href="#process">Process</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
-  <a href="#quote" class="btn btn-accent">Get a free quote</a>
+  <a href="#quote" class="btn btn-accent">Get a free website audit</a>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -443,30 +458,30 @@ footer .logo span{color:rgba(246,242,233,.55)}
   <div class="blob b2"></div>
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="badge"><span class="dot"></span>Now booking first clients · launch offer active</span>
-      <h1>Beautiful digital presence for <em>growing</em> businesses.</h1>
-      <p class="sub">Websites, social creatives, branding, and marketing assets that help small businesses look premium online — without the agency price tag.</p>
+      <span class="badge"><span class="dot"></span>Now booking first clients · free website audit available</span>
+      <h1>Affordable websites & digital design for <em>growing</em> businesses.</h1>
+      <p class="sub">We help small businesses get online, look professional, and attract more customers with websites, branding, and social media designs — starting from $49.</p>
       <div class="hero-btns">
-        <a href="#portfolio" class="btn btn-primary">View portfolio <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#quote" class="btn btn-primary">Get a free website audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         <a href="#pricing" class="btn btn-ghost">View pricing</a>
       </div>
       <div class="trust">
-        <div><div class="stars">★★★★★</div><small>Loved by small business owners</small></div>
+        <div><div class="stars">★★★★★</div><small>Built for local shops, creators, and service businesses</small></div>
         <div class="vline"></div>
-        <div><small><b style="color:var(--ink);font-size:1.05rem">Fast</b> turnaround<br>Most projects in 5–10 days</small></div>
+        <div><small><b style="color:var(--ink);font-size:1.05rem">From $49</b><br>Clear launch pricing</small></div>
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
       <div class="float-card fc-browser">
         <div class="bar"><i></i><i></i><i></i></div>
         <div class="screen">
-          <div class="tag">Your business,<br><b>beautifully online.</b></div>
+          <div class="tag">More enquiries,<br><b>less design stress.</b></div>
           <span class="pill">Live in days</span>
         </div>
       </div>
       <div class="float-card fc-stat">
-        <div class="n">+180%</div>
-        <div class="l">avg. boost in online enquiries*</div>
+        <div class="n">5–10d</div>
+        <div class="l">average delivery time</div>
       </div>
       <div class="float-card fc-social">
         <div class="top"></div>
@@ -484,13 +499,42 @@ footer .logo span{color:rgba(246,242,233,.55)}
   </div>
 </div>
 
+<!-- ============ TRUST SIGNALS ============ -->
+<section class="section" id="trust" style="padding:64px 0 24px">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-bottom:24px">
+      <span class="eyebrow" style="justify-content:center">Why small businesses choose us</span>
+      <h2>Outcome-focused design without agency friction.</h2>
+      <p>Fast delivery, clear pricing, mobile-optimized designs, direct communication, and support while your project is being built.</p>
+    </div>
+    <div class="proof-grid">
+      <div class="proof-card reveal"><div class="n">6+</div><div class="l">Design concepts created</div><p>Websites, social creatives, and brand assets across business types.</p></div>
+      <div class="proof-card reveal"><div class="n">5–10d</div><div class="l">Average delivery time</div><p>Simple sites and design packs move quickly from idea to launch.</p></div>
+      <div class="proof-card reveal"><div class="n">$49+</div><div class="l">Affordable starting price</div><p>Useful options for small businesses that need value first.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY CHOOSE US ============ -->
+<section class="section" id="why" style="padding-top:48px">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-card reveal"><b>Fast Delivery</b><span>Launch-ready work in days, not months.</span></div>
+      <div class="why-card reveal"><b>Affordable Pricing</b><span>Starting prices shown upfront.</span></div>
+      <div class="why-card reveal"><b>Mobile-Optimized</b><span>Built for customers browsing on phones.</span></div>
+      <div class="why-card reveal"><b>Project Support</b><span>Support and revisions during the build.</span></div>
+      <div class="why-card reveal"><b>Direct Communication</b><span>No account managers, no confusion.</span></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ SERVICES ============ -->
 <section class="section" id="services">
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">What we do</span>
-      <h2>Everything your business needs to look premium online.</h2>
-      <p>One studio for your website, social content, and brand assets — so every touchpoint feels consistent and premium.</p>
+      <h2>Websites, branding, and social posts that help you get more enquiries.</h2>
+      <p>Clear, affordable design support for small businesses that need to launch quickly, look credible, and make it easier for customers to contact them.</p>
     </div>
     <div class="svc-grid">
       <div class="svc-card reveal">
@@ -521,9 +565,9 @@ footer .logo span{color:rgba(246,242,233,.55)}
 <section class="section" id="portfolio" style="background:var(--paper-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Real examples</span>
-      <h2>Actual projects and launch builds.</h2>
-      <p>Real website screenshots and generated carousel-style social creatives — no dummy color blocks or fake client claims.</p>
+      <span class="eyebrow">Portfolio</span>
+      <h2>Examples across websites, social content, and brand concepts.</h2>
+      <p>Each project is labeled by business type so visitors can quickly see the variety and imagine what we can build for them.</p>
     </div>
     <div class="tabs reveal" id="portTabs">
       <button class="tab active" data-filter="all">All</button>
@@ -534,27 +578,27 @@ footer .logo span{color:rgba(246,242,233,.55)}
     <div class="port-grid" id="portGrid">
       <a class="port-card reveal" data-cat="web" href="https://fidbac.vercel.app" target="_blank" rel="noopener">
         <div class="port-vis"><img src="assets/web-fidbac.png" alt="Screenshot of Fidbac expense tracker landing page" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Fidbac</span><span class="c">Product UI</span></div>
+        <div class="port-meta"><span class="t">Finance App Website Concept</span><span class="c">Product UI</span></div>
       </a>
       <a class="port-card reveal" data-cat="web" href="https://souvikdeb2612.github.io/aestheria.studio/" target="_blank" rel="noopener">
         <div class="port-vis"><img src="assets/web-aestheria.png" alt="Screenshot of Aestheria Studio landing page" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Aestheria Studio</span><span class="c">Landing page</span></div>
+        <div class="port-meta"><span class="t">Design Studio Website Concept</span><span class="c">Landing page</span></div>
       </a>
       <a class="port-card reveal" data-cat="web" href="https://souvikdeb2612.github.io/Cake-shop/" target="_blank" rel="noopener">
         <div class="port-vis"><img src="assets/web-cake-shop.png" alt="Screenshot of Shikha Cake Studio website" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Cake Shop</span><span class="c">Website</span></div>
+        <div class="port-meta"><span class="t">Bakery Website Concept</span><span class="c">Website</span></div>
       </a>
       <a class="port-card reveal" data-cat="social" href="assets/social-website-fixes.jpg" target="_blank" rel="noopener">
         <div class="port-vis social-img"><img src="assets/social-website-fixes.jpg" alt="Generated Instagram carousel cover about website fixes" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Website Fixes</span><span class="c">Carousel</span></div>
+        <div class="port-meta"><span class="t">Small Business Website Tips</span><span class="c">Carousel</span></div>
       </a>
       <a class="port-card reveal" data-cat="social" href="assets/social-launch-checklist.jpg" target="_blank" rel="noopener">
         <div class="port-vis social-img"><img src="assets/social-launch-checklist.jpg" alt="Generated Instagram carousel cover for small business launch checklist" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Launch Checklist</span><span class="c">Carousel</span></div>
+        <div class="port-meta"><span class="t">Local Business Launch Checklist</span><span class="c">Carousel</span></div>
       </a>
       <a class="port-card reveal" data-cat="social" href="assets/social-cafe-concept.jpg" target="_blank" rel="noopener">
         <div class="port-vis social-img"><img src="assets/social-cafe-concept.jpg" alt="Generated cafe promo social concept pack" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Cafe Promo Pack</span><span class="c">Concept</span></div>
+        <div class="port-meta"><span class="t">Cafe Social Media Pack Concept</span><span class="c">Concept</span></div>
       </a>
     </div>
   </div>
@@ -564,9 +608,20 @@ footer .logo span{color:rgba(246,242,233,.55)}
 <section class="section" id="pricing">
   <div class="wrap">
     <div class="section-head center reveal">
-      <span class="eyebrow" style="justify-content:center">Packages</span>
-      <h2>Simple launch pricing.</h2>
-      <p>Clear starter packages with no surprises. Pick a plan or request a custom quote — built for fast launch and early traction.</p>
+      <span class="eyebrow" style="justify-content:center">Packages & Offers</span>
+      <h2>Affordable pricing, visible upfront.</h2>
+      <p>Small businesses should not have to book a call just to know the budget. Start with a fixed package or ask for a free website audit.</p>
+    </div>
+
+    <div class="price-block reveal">
+      <div class="price-label">Starting Prices <small>· quick budget check</small></div>
+      <div class="start-grid">
+        <div class="start-card"><b>Landing Page</b><span>One page to capture leads</span><strong>$99</strong></div>
+        <div class="start-card"><b>Business Website</b><span>Core pages for local businesses</span><strong>$199</strong></div>
+        <div class="start-card"><b>Premium Website</b><span>Custom layout or advanced needs</span><strong>$399+</strong></div>
+        <div class="start-card"><b>Social Media Pack</b><span>Ready-to-post brand creatives</span><strong>$49</strong></div>
+        <div class="start-card"><b>Free Audit</b><span>Website or online presence review</span><strong>$0</strong></div>
+      </div>
     </div>
 
     <!-- website packages -->
@@ -601,7 +656,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
         <div class="price-card">
           <div class="pc-name">Premium Website</div>
           <div class="pc-desc">Fully custom, e-commerce or advanced features.</div>
-          <div class="amt">$699<small>+</small></div>
+          <div class="amt">$399<small>+</small></div>
           <div class="amt"><small>custom build</small></div>
           <ul class="pc-feat">
             <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Everything in Business</li>
@@ -666,13 +721,13 @@ footer .logo span{color:rgba(246,242,233,.55)}
     <div class="offer-inner">
       <div>
         <span class="fire">🔥 New client offer</span>
-        <h2>Get <em>20% off</em> your first project.</h2>
+        <h2>Get a <em>free website audit</em> before you spend anything.</h2>
         <ul class="offer-perks">
-          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>20% off your first project</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free review of your current website or online presence</li>
           <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free homepage mockup before you pay</li>
-          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free website audit of your current site</li>
+          <li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Clear next steps, pricing, and timeline</li>
         </ul>
-        <a href="#quote" class="btn btn-accent">Claim the offer <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#quote" class="btn btn-accent">Get my free audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="countdown">
         <p class="lab">Offer ends in</p>
@@ -682,7 +737,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
           <div class="cd-unit"><div class="num" id="cd-m">00</div><div class="u">Min</div></div>
           <div class="cd-unit"><div class="num" id="cd-s">00</div><div class="u">Sec</div></div>
         </div>
-        <p class="spots">Only <b>3 launch-offer spots</b> left this month.</p>
+        <p class="spots"><b>3 launch-offer spots</b> available this month for discounted builds.</p>
       </div>
     </div>
   </div>
@@ -698,7 +753,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
     </div>
     <div class="proc-grid">
       <div class="proc-line" aria-hidden="true"></div>
-      <div class="proc-step acc reveal"><div class="proc-num">1</div><h4>Contact us</h4><p>Reach out with what you need — it's free and no pressure.</p></div>
+      <div class="proc-step acc reveal"><div class="proc-num">1</div><h4>Free audit</h4><p>Send your website or business idea and get practical improvement notes.</p></div>
       <div class="proc-step reveal"><div class="proc-num">2</div><h4>Discuss requirements</h4><p>We learn about your business, goals, and style.</p></div>
       <div class="proc-step reveal"><div class="proc-num">3</div><h4>Receive proposal</h4><p>A clear quote and timeline, sent straight to you.</p></div>
       <div class="proc-step reveal"><div class="proc-num">4</div><h4>Design & revisions</h4><p>We design, you review, we refine until it's right.</p></div>
@@ -768,8 +823,8 @@ footer .logo span{color:rgba(246,242,233,.55)}
   <div class="wrap contact-grid">
     <div class="contact-info reveal">
       <span class="eyebrow">Get in touch</span>
-      <h2>Let's build something great.</h2>
-      <p class="intro">Have a question or ready to start? Reach out any way you like — or grab a free quote and we'll reply within one business day.</p>
+      <h2>Get your free website audit.</h2>
+      <p class="intro">Share your current website, Instagram, or business idea. We'll reply with what to improve, the best package, and a clear starting price.</p>
       <div class="ch-list">
         <a class="ch" href="mailto:hello@aestheria.studio">
           <span class="ch-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
@@ -789,8 +844,8 @@ footer .logo span{color:rgba(246,242,233,.55)}
     <!-- LEAD CAPTURE -->
     <div class="form-card reveal" id="quote">
       <div id="formView">
-        <h3>Get a free quote</h3>
-        <p class="fsub">Tell us a little about your project — no commitment, just a quick reply with pricing.</p>
+        <h3>Get a free website audit</h3>
+        <p class="fsub">Tell us about your business and we'll send quick improvement ideas, package suggestions, and pricing.</p>
         <div class="form-banner" id="formBanner"></div>
         <form id="quoteForm" novalidate>
           <div class="field" id="f-name">
@@ -810,7 +865,8 @@ footer .logo span{color:rgba(246,242,233,.55)}
           <div class="field" id="f-service">
             <label for="service">Service needed <span class="req">*</span></label>
             <select id="service" name="service">
-              <option value="" disabled selected>Choose a service…</option>
+              <option value="" disabled selected>What do you want help with?</option>
+              <option>Free Website Audit</option>
               <option>Website Design</option>
               <option>Landing Page</option>
               <option>Business Website</option>
@@ -825,16 +881,16 @@ footer .logo span{color:rgba(246,242,233,.55)}
           </div>
           <div class="field">
             <label for="details">Anything else? (optional)</label>
-            <textarea id="details" name="details" placeholder="Tell us about your project, timeline, or budget…"></textarea>
+            <textarea id="details" name="details" placeholder="Share your website/Instagram link, what you want improved, timeline, or budget…"></textarea>
           </div>
-          <button type="submit" class="btn btn-clay" id="submitBtn">Send my free quote request <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button type="submit" class="btn btn-clay" id="submitBtn">Send my free audit request <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           <p class="form-note">We'll reply within 1 business day. No spam, ever.</p>
         </form>
       </div>
       <div class="form-success" id="formSuccess">
         <div class="ck-big"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="32" height="32"><path d="M5 13l4 4L19 7"/></svg></div>
         <h3>Thank you!</h3>
-        <p>Your quote request is on its way. We'll get back to you within one business day.</p>
+        <p>Your audit request is on its way. We'll get back to you within one business day.</p>
       </div>
     </div>
   </div>
@@ -864,7 +920,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
       </div>
       <div class="foot-col">
         <h5>Get started</h5>
-        <a href="#quote">Get a free quote</a>
+        <a href="#quote">Get a free website audit</a>
         <a href="mailto:hello@aestheria.studio">Email us</a>
         <a href="https://wa.me/15550000000" target="_blank" rel="noopener">WhatsApp</a>
         <a href="https://instagram.com/aestheria.studio" target="_blank" rel="noopener">Instagram</a>
@@ -885,7 +941,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
 /* ============================================================
    CONFIG — set these two values before you deploy
    ============================================================ */
-// Optional: add a Formspree endpoint later. Until then, quote requests open an email draft.
+// Optional: add a Formspree endpoint later. Until then, audit requests open an email draft.
 const FORMSPREE_ENDPOINT = "";
 const CONTACT_EMAIL = "hello@aestheria.studio";
 
@@ -983,7 +1039,7 @@ const CONTACT_EMAIL = "hello@aestheria.studio";
     // No backend connected yet: open a prefilled email draft so launch leads are not lost.
     if(!FORMSPREE_ENDPOINT){
       const data = new FormData(form);
-      const subject = encodeURIComponent('New quote request — Aestheria Studio');
+      const subject = encodeURIComponent('New website audit request — Aestheria Studio');
       const body = encodeURIComponent([
         `Name: ${data.get('name') || ''}`,
         `Business: ${data.get('business') || ''}`,
@@ -993,7 +1049,7 @@ const CONTACT_EMAIL = "hello@aestheria.studio";
         `Details: ${data.get('details') || ''}`
       ].join('\n'));
       window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-      banner.textContent = 'Opening your email app with the request pre-filled. If it does not open, email hello@aestheria.studio directly.';
+      banner.textContent = 'Opening your email app with the audit request pre-filled. If it does not open, email hello@aestheria.studio directly.';
       banner.classList.add('show');
       return;
     }
