@@ -6,8 +6,8 @@ Use this checklist to replace placeholders with real business data.
 
 - WhatsApp number: currently `+1 (555) 000-0000` / `https://wa.me/15550000000`.
 - Email: currently `hello@aestheria.studio`.
-- Pricing: current packages and starting prices are launch assumptions.
-- Trust stats: `6+ design concepts created`, `5–10d average delivery time`, `$49+ affordable starting price`.
+- Pricing: current packages and starting prices are launch assumptions; INR pricing is intentionally India-friendly and lower than direct USD conversion.
+- Trust stats: `6+ design concepts created`, `5–10d average delivery time`, `$49+ global / ₹999+ India-friendly starting price`.
 - Launch offer count: `3 launch-offer spots`.
 - Testimonials: sample reviews with placeholder names/businesses.
 - Portfolio screenshots: concept/sample project screenshots unless replaced with real client projects.
