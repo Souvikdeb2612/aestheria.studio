@@ -4,8 +4,8 @@ Use this checklist to replace placeholders with real business data.
 
 ## Aestheria Studio site
 
-- WhatsApp number: currently `+1 (555) 000-0000` / `https://wa.me/15550000000`.
-- Email: currently `hello@aestheria.studio`.
+- WhatsApp number: set to `+91 86385 69953` / `https://wa.me/918638569953`.
+- Email: set to `aestheria.93@gmail.com`.
 - Pricing: current packages and starting prices are launch assumptions; INR pricing is intentionally India-friendly and lower than direct USD conversion.
 - Trust stats: `6+ design concepts created`, `5–10d average delivery time`, `$49+ global / ₹799+ India-friendly starting price`.
 - Launch offer count: `3 launch-offer spots`.
