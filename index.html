@@ -244,9 +244,6 @@ header.nav.scrolled{background:rgba(246,242,233,.82);backdrop-filter:blur(14px);
 .pc-feat li svg{width:17px;height:17px;color:var(--mint-deep);flex:none}
 .price-card .btn{width:100%;justify-content:center}
 .price-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:24px}
-.currency-bar{display:flex;align-items:center;justify-content:center;gap:.75rem;flex-wrap:wrap;margin:-28px auto 42px;color:var(--muted);font-size:.92rem;text-align:center}
-.currency-bar button{font-family:var(--font-body);font-weight:700;border:1.5px solid var(--line);background:var(--paper-2);color:var(--ink);border-radius:100px;padding:.5rem .9rem;cursor:pointer;transition:transform .25s ease,border-color .25s ease,background .25s ease}
-.currency-bar button:hover{transform:translateY(-1px);border-color:var(--ink);background:rgba(18,22,16,.03)}
 
 /* ---------- trust + starting prices ---------- */
 .proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}
@@ -616,11 +613,6 @@ footer .logo span{color:rgba(246,242,233,.55)}
       <p>Small businesses should not have to book a call just to know the budget. Start with a fixed package or ask for a free website audit.</p>
     </div>
 
-    <div class="currency-bar reveal" aria-live="polite">
-      <span id="priceRegionNote">Showing global USD pricing. Indian visitors are shown lower INR launch pricing using browser locale/timezone; no location permission needed.</span>
-      <button type="button" id="currencyToggle" aria-pressed="false">Show INR</button>
-    </div>
-
     <div class="price-block reveal">
       <div class="price-label">Starting Prices <small>· quick budget check</small></div>
       <div class="start-grid">
@@ -961,17 +953,11 @@ const CONTACT_EMAIL = "hello@aestheria.studio";
 
   /* ---- region-aware currency display ----
      Best practice for a static site: avoid intrusive geolocation prompts and
-     third-party IP lookups. Use explicit URL params first, then saved choice,
-     then browser locale/timezone signals, with a manual toggle always visible. */
+     third-party IP lookups. Use explicit URL params first, then browser
+     locale/timezone signals. */
   const priceEls = document.querySelectorAll('[data-usd][data-inr]');
-  const currencyToggle = document.getElementById('currencyToggle');
-  const priceRegionNote = document.getElementById('priceRegionNote');
   const params = new URLSearchParams(window.location.search);
   const norm = v => (v || '').trim().toUpperCase();
-  const safeStore = {
-    get(key){ try { return window.localStorage.getItem(key); } catch(e) { return null; } },
-    set(key, value){ try { window.localStorage.setItem(key, value); } catch(e) {} }
-  };
   function looksIndianAudience(){
     const regionParam = norm(params.get('region') || params.get('country'));
     const currencyParam = norm(params.get('currency') || params.get('ccy'));
@@ -986,32 +972,14 @@ const CONTACT_EMAIL = "hello@aestheria.studio";
     const currencyParam = norm(params.get('currency') || params.get('ccy'));
     if(currencyParam === 'INR' || regionParam === 'IN') return 'INR';
     if(currencyParam === 'USD') return 'USD';
-    const saved = safeStore.get('aestheriaCurrency');
-    if(saved === 'INR' || saved === 'USD') return saved;
     return looksIndianAudience() ? 'INR' : 'USD';
   }
-  function applyCurrency(currency, persist=false){
+  function applyCurrency(currency){
     const key = currency === 'INR' ? 'inr' : 'usd';
     document.documentElement.dataset.currency = currency;
     priceEls.forEach(el => { el.textContent = el.dataset[key]; });
-    if(priceRegionNote){
-      priceRegionNote.textContent = currency === 'INR'
-        ? 'Showing lower INR launch pricing for India, detected from browser locale/timezone. No location permission needed.'
-        : 'Showing global USD pricing. Indian visitors are shown lower INR launch pricing using browser locale/timezone; no location permission needed.';
-    }
-    if(currencyToggle){
-      currencyToggle.textContent = currency === 'INR' ? 'Show USD' : 'Show INR';
-      currencyToggle.setAttribute('aria-pressed', currency === 'INR' ? 'true' : 'false');
-    }
-    if(persist) safeStore.set('aestheriaCurrency', currency);
   }
   applyCurrency(chooseInitialCurrency());
-  if(currencyToggle){
-    currencyToggle.addEventListener('click', () => {
-      const next = document.documentElement.dataset.currency === 'INR' ? 'USD' : 'INR';
-      applyCurrency(next, true);
-    });
-  }
 
   /* ---- sticky nav shadow ---- */
   const nav = document.getElementById('nav');
