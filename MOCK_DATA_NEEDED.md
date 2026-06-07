@@ -9,7 +9,7 @@ Use this checklist to replace placeholders with real business data.
 - Pricing: current packages and starting prices are launch assumptions; INR pricing is intentionally India-friendly and lower than direct USD conversion.
 - Trust stats: `6+ design concepts created`, `5–10d average delivery time`, `$49+ global / ₹799+ India-friendly starting price`.
 - Launch offer count: `3 launch-offer spots`.
-- Testimonials: sample reviews with placeholder names/businesses.
+- Testimonials: updated with provided names/titles — Masum Ahmed (Entrepreneur), Rosy Sinha (Business Owner), Amit Nath (Business Owner).
 - Portfolio screenshots: concept/sample project screenshots unless replaced with real client projects.
 - Carousel case-study slide copy: concept educational copy, not client-approved campaign data.
 - Form backend: currently mailto fallback; no real Formspree/backend endpoint connected.
