@@ -4,9 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Aestheria Studio — Affordable Digital Solutions for Growing Businesses</title>
-<meta name="description" content="Affordable websites, branding, and social media designs for small businesses that want to grow online. Global pricing starts from $49, with India-friendly launch pricing from ₹799, plus free website audits." />
+<meta name="description" content="Affordable websites, WhatsApp bots, customer support agents, e-books, digital products, web apps, branding, creative packs, and social media designs for small businesses. Digital products start from $9, with service pricing from $49 and India-friendly launch pricing from ₹299." />
 <meta property="og:title" content="Aestheria Studio — Affordable Websites & Digital Design for Growing Businesses" />
-<meta property="og:description" content="Websites, branding, and social media designs that help small businesses grow online — with visible pricing and free audits." />
+<meta property="og:description" content="Websites, WhatsApp bots, templates, digital products, creative packs, branding, and social media designs that help small businesses grow online — with visible pricing and simple purchase options." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://aestheria.xyz" />
 <meta name="theme-color" content="#0E1B14" />
@@ -192,20 +192,79 @@ header.nav.scrolled{background:rgba(246,242,233,.86);backdrop-filter:blur(14px);
 .svc-list{display:flex;flex-wrap:wrap;gap:.55rem}
 .svc-list li{font-size:.9rem;font-weight:500;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:100px;padding:.4rem .85rem}
 
-/* ---------- portfolio ---------- */
-.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:36px}
+/* ---------- products & offers ---------- */
+.products{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--paper) 0%,#F0EBDD 100%);border-top:1px solid var(--line-soft)}
+.products::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 12% 18%,rgba(24,201,140,.14),transparent 32%),radial-gradient(circle at 86% 8%,rgba(238,101,57,.12),transparent 28%)}
+.products .wrap{position:relative;z-index:1}
+.product-headline{display:grid;grid-template-columns:.92fr 1.08fr;gap:34px;align-items:end;margin-bottom:34px}
+.product-headline .section-head{margin-bottom:0}
+.product-guide{background:var(--forest);color:var(--paper);border-radius:var(--r-lg);padding:28px;border:1px solid rgba(255,255,255,.1);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.product-guide::after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:rgba(24,201,140,.2);filter:blur(36px);right:-54px;top:-54px}
+.product-guide b{display:block;font-family:var(--font-display);font-size:1.3rem;margin-bottom:.7rem;color:#fff;position:relative;z-index:1}
+.product-guide p{color:rgba(246,242,233,.72);font-size:.98rem;position:relative;z-index:1}
+.product-tabs{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem;position:relative;z-index:1}
+.product-tabs span{font-size:.82rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#06301F;background:var(--mint);border-radius:100px;padding:.42rem .72rem}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.product-family{background:rgba(252,250,244,.88);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;display:flex;flex-direction:column;min-height:100%}
+.product-family::before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:linear-gradient(90deg,var(--mint),rgba(24,201,140,.18))}
+.product-family:nth-child(2)::before{background:linear-gradient(90deg,var(--clay),rgba(238,101,57,.18))}
+.product-family:nth-child(3)::before{background:linear-gradient(90deg,var(--ink),rgba(18,22,16,.18))}
+.family-top{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:18px}
+.product-icon{width:52px;height:52px;border-radius:16px;background:rgba(24,201,140,.12);color:var(--mint-deep);display:flex;align-items:center;justify-content:center;flex:none}
+.product-family:nth-child(2) .product-icon{background:rgba(238,101,57,.12);color:var(--clay-deep)}
+.product-family:nth-child(3) .product-icon{background:rgba(18,22,16,.07);color:var(--ink)}
+.product-icon svg{width:25px;height:25px}
+.family-type{font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mint-deep);margin-bottom:.35rem}
+.product-family:nth-child(2) .family-type{color:var(--clay-deep)}
+.product-family h3{font-size:1.45rem;margin-bottom:.65rem}
+.family-copy{color:var(--muted);font-size:.95rem;margin-bottom:20px}
+.offer-stack{display:flex;flex-direction:column;gap:12px;margin-top:auto}
+.offer-mini{background:var(--paper);border:1px solid var(--line-soft);border-radius:17px;padding:17px 16px;transition:transform .3s ease,border-color .3s ease,background .3s ease}
+.offer-mini:hover{transform:translateY(-3px);border-color:rgba(24,201,140,.35);background:#fffdf7}
+.offer-mini-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:.45rem}
+.offer-mini h4{font-family:var(--font-display);font-size:1.06rem;line-height:1.16}
+.offer-mini p{color:var(--muted);font-size:.9rem;line-height:1.48}
+.status{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:100px;padding:.28rem .55rem;white-space:nowrap}
+.status.ready{background:rgba(24,201,140,.14);color:var(--mint-deep)}
+.status.pilot{background:rgba(238,101,57,.13);color:var(--clay-deep)}
+.status.custom{background:rgba(18,22,16,.08);color:var(--ink)}
+.offer-meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line-soft)}
+.offer-meta strong{font-family:var(--font-display);font-size:1.08rem;color:var(--ink)}
+.offer-meta a{font-size:.86rem;font-weight:800;color:var(--mint-deep);display:inline-flex;align-items:center;gap:.25rem}
+.product-family:nth-child(2) .offer-meta a{color:var(--clay-deep)}
+.product-cta-band{margin-top:24px;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px 26px;display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;box-shadow:var(--shadow-sm)}
+.product-cta-band b{font-family:var(--font-display);font-size:1.28rem;display:block;margin-bottom:.25rem}
+.product-cta-band p{color:var(--muted);font-size:.95rem}
+.product-cta-band .btn{justify-content:center}
+@media(max-width:980px){.product-headline{grid-template-columns:1fr}.product-grid{grid-template-columns:1fr}.product-cta-band{grid-template-columns:1fr}}
+@media(max-width:520px){.product-family{padding:22px 18px}.product-guide{padding:22px 18px}.offer-mini-head{align-items:flex-start;flex-direction:column}.offer-meta{align-items:flex-start;flex-direction:column}.product-cta-band{padding:22px 18px}}
+
+/* ---------- examples / portfolio ---------- */
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:0}
 .tab{font-family:var(--font-body);font-weight:600;font-size:.95rem;padding:.6rem 1.2rem;border-radius:100px;border:1.5px solid var(--line);background:transparent;cursor:pointer;transition:.25s;color:var(--muted)}
 .tab.active{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .tab:hover:not(.active){border-color:var(--ink);color:var(--ink)}
-.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.port-card{border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:var(--paper-2);transition:transform .35s,box-shadow .35s;cursor:pointer}
+.portfolio-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:24px;flex-wrap:wrap}
+.portfolio-toolbar .btn{padding:.78rem 1.15rem}
+.portfolio-shell{background:rgba(246,242,233,.72);border:1px solid var(--line);border-radius:var(--r-lg);padding:20px;box-shadow:var(--shadow-sm);overflow:hidden}
+.portfolio-shell-head{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:16px}
+.port-kicker{display:block;font-size:.76rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--mint-deep);margin-bottom:.2rem}
+.port-count{display:block;font-family:var(--font-display);font-size:1.28rem;color:var(--ink)}
+.port-controls{display:flex;align-items:center;gap:9px;flex:none}
+.port-nav{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--paper-2);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:.25s}
+.port-nav:hover:not(:disabled){background:var(--ink);color:var(--paper);transform:translateY(-2px)}
+.port-nav:disabled{opacity:.35;cursor:not-allowed}
+.port-viewport{overflow:hidden}
+.port-track{display:flex;gap:22px;transition:transform .45s cubic-bezier(.2,.75,.25,1);will-change:transform}
+.port-card{flex:0 0 calc((100% - 44px)/3);border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line);background:var(--paper-2);transition:transform .35s,box-shadow .35s;cursor:pointer;min-width:0}
+.port-card.is-hidden{display:none!important}
 .port-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
 .port-vis{height:220px;position:relative;overflow:hidden;background:var(--paper)}
 .port-vis img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
 .port-card:hover .port-vis img{transform:scale(1.035)}
-.port-vis.social-img{height:300px;background:var(--paper)}
+.port-vis.social-img{height:286px;background:var(--paper)}
 .port-meta{padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:10px}
-.port-meta .t{font-family:var(--font-display);font-size:1.15rem}
+.port-meta .t{font-family:var(--font-display);font-size:1.15rem;line-height:1.15}
 .port-meta .c{font-size:.74rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mint-deep);background:rgba(24,201,140,.12);padding:.3rem .6rem;border-radius:100px;white-space:nowrap}
 /* website mockup visual */
 .mk-web{padding:14px;background:var(--paper)}
@@ -217,10 +276,25 @@ header.nav.scrolled{background:rgba(246,242,233,.86);backdrop-filter:blur(14px);
 .mk-soc{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px}
 .mk-soc div{aspect-ratio:1}
 /* branding mockup */
-.mk-brand{display:flex;align-items:center;justify-content:center;gap:18px;flex-direction:column}
-.mk-brand .mono{font-family:var(--font-display);font-size:2.6rem;color:#fff}
-.mk-brand .swatches{display:flex;gap:8px}
-.mk-brand .swatches i{width:26px;height:26px;border-radius:50%;border:2px solid rgba(255,255,255,.6)}
+.port-vis.brand-visual{height:260px;background:linear-gradient(135deg,#0E1B14,#2E6B53);padding:22px}
+.mk-brand{height:100%;border:1px solid rgba(255,255,255,.16);border-radius:18px;display:grid;place-items:center;gap:18px;background:radial-gradient(circle at 20% 20%,rgba(24,201,140,.32),transparent 34%),rgba(255,255,255,.04);color:#fff;text-align:center}
+.mk-brand .mono{font-family:var(--font-display);font-size:2.8rem;line-height:.9}
+.mk-brand small{display:block;font-family:var(--font-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(246,242,233,.68);margin-top:12px}
+.mk-brand .swatches{display:flex;gap:8px;justify-content:center}
+.mk-brand .swatches i{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.65)}
+/* WhatsApp bot mockup */
+.port-vis.bot-visual{height:260px;background:linear-gradient(145deg,#073B2B,#0E1B14 55%,#183226);padding:18px;display:flex;align-items:center;justify-content:center}
+.mk-bot{width:min(100%,250px);background:#F9F5EC;border-radius:26px;padding:13px;box-shadow:0 24px 50px -26px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.2)}
+.bot-top{display:flex;align-items:center;gap:9px;padding:7px 6px 11px;border-bottom:1px solid rgba(18,22,16,.08);font-size:.8rem;font-weight:800;color:var(--ink)}
+.bot-dot{width:30px;height:30px;border-radius:50%;background:var(--mint);display:grid;place-items:center;color:#06301F;font-size:.8rem}
+.bot-chat{display:flex;flex-direction:column;gap:8px;padding-top:12px}
+.bot-msg{max-width:82%;padding:8px 10px;border-radius:14px;font-size:.77rem;line-height:1.25;box-shadow:0 6px 14px -12px rgba(0,0,0,.35)}
+.bot-msg.user{align-self:flex-end;background:#DCF8C6;border-bottom-right-radius:5px}
+.bot-msg.agent{align-self:flex-start;background:#fff;border-bottom-left-radius:5px}
+.bot-actions{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
+.bot-actions span{font-size:.62rem;font-weight:800;color:#06301F;background:rgba(24,201,140,.18);border:1px solid rgba(24,201,140,.25);border-radius:999px;padding:5px 7px}
+@media(max-width:980px){.port-card{flex-basis:calc((100% - 22px)/2)}.portfolio-shell-head{align-items:flex-start}}
+@media(max-width:700px){.portfolio-toolbar{align-items:stretch}.portfolio-toolbar .btn{width:100%;justify-content:center}.portfolio-shell{padding:16px}.portfolio-shell-head{flex-direction:column}.port-controls{align-self:flex-end}.port-card{flex-basis:100%}.port-vis.social-img,.port-vis.bot-visual,.port-vis.brand-visual{height:245px}}
 
 /* ---------- pricing ---------- */
 .price-block{margin-bottom:64px}
@@ -252,7 +326,7 @@ header.nav.scrolled{background:rgba(246,242,233,.86);backdrop-filter:blur(14px);
 .proof-card .n{font-family:var(--font-display);font-size:2.15rem;color:var(--mint-deep);line-height:1}
 .proof-card .l{font-weight:700;margin-top:.45rem}
 .proof-card p{color:var(--muted);font-size:.92rem;margin-top:.35rem}
-.why-grid,.start-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.why-grid,.start-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px}
 .why-card,.start-card{background:var(--paper-2);border:1px solid var(--line);border-radius:var(--r);padding:22px 18px}
 .why-card b,.start-card b{display:block;font-family:var(--font-display);font-size:1.12rem;margin-bottom:.3rem}
 .why-card span,.start-card span{display:block;color:var(--muted);font-size:.9rem}
@@ -404,7 +478,6 @@ footer .logo span{color:rgba(246,242,233,.55)}
   .mobile-menu{inset:64px 0 0;padding:26px 22px max(28px,env(safe-area-inset-bottom))}
   .mobile-menu a{font-size:clamp(1.25rem,8vw,1.55rem);padding:12px 0}
   .svc-grid{grid-template-columns:1fr}
-  .port-grid{grid-template-columns:1fr}
   .price-grid{grid-template-columns:1fr}
   .tst-grid{grid-template-columns:1fr}
   .section{padding:68px 0}
@@ -463,9 +536,9 @@ footer .logo span{color:rgba(246,242,233,.55)}
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#services">Services</a>
+      <a href="#products">Shop</a>
       <a href="#portfolio">Portfolio</a>
       <a href="#pricing">Pricing</a>
-      <a href="#process">Process</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-cta">
@@ -478,9 +551,9 @@ footer .logo span{color:rgba(246,242,233,.55)}
 
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <a href="#services">Services</a>
+  <a href="#products">Shop</a>
   <a href="#portfolio">Portfolio</a>
   <a href="#pricing">Pricing</a>
-  <a href="#process">Process</a>
   <a href="#faq">FAQ</a>
   <a href="#contact">Contact</a>
   <a href="#quote" class="btn btn-accent">Get a free website audit</a>
@@ -494,10 +567,10 @@ footer .logo span{color:rgba(246,242,233,.55)}
     <div class="hero-copy">
       <span class="badge"><span class="dot"></span>Now booking first clients · free website audit available</span>
       <h1>Affordable websites & digital design for <em>growing</em> businesses.</h1>
-      <p class="sub">We help small businesses get online, look professional, and attract more customers with websites, branding, and social media designs — starting from <span class="js-price" data-usd="$49" data-inr="₹799">$49</span>.</p>
+      <p class="sub">We help small businesses get online, look professional, and reply faster with websites, WhatsApp bots, digital products, branding, and social media designs — starting from <span class="js-price" data-usd="$9" data-inr="₹299">$9</span>.</p>
       <div class="hero-btns">
         <a href="#quote" class="btn btn-primary">Get a free website audit <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="#pricing" class="btn btn-ghost">View pricing</a>
+        <a href="#products" class="btn btn-ghost">Visit the shop</a>
       </div>
       <div class="trust">
         <div><div class="stars">★★★★★</div><small>Built for local shops, creators, and service businesses</small></div>
@@ -528,8 +601,8 @@ footer .logo span{color:rgba(246,242,233,.55)}
 <!-- ticker -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>Websites</span><span>·</span><span>Social Media</span><span>·</span><span>Branding</span><span>·</span><span>Logos</span><span>·</span><span>Flyers & Menus</span><span>·</span><span>Ad Creatives</span><span>·</span>
-    <span>Websites</span><span>·</span><span>Social Media</span><span>·</span><span>Branding</span><span>·</span><span>Logos</span><span>·</span><span>Flyers & Menus</span><span>·</span><span>Ad Creatives</span><span>·</span>
+    <span>Websites</span><span>·</span><span>WhatsApp Bots</span><span>·</span><span>Chat Agents</span><span>·</span><span>E-books</span><span>·</span><span>Templates</span><span>·</span><span>Creative Packs</span><span>·</span><span>Social Media</span><span>·</span><span>Web Apps</span><span>·</span>
+    <span>Websites</span><span>·</span><span>WhatsApp Bots</span><span>·</span><span>Chat Agents</span><span>·</span><span>E-books</span><span>·</span><span>Templates</span><span>·</span><span>Creative Packs</span><span>·</span><span>Social Media</span><span>·</span><span>Web Apps</span><span>·</span>
   </div>
 </div>
 
@@ -542,7 +615,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
       <p>Fast delivery, clear pricing, mobile-optimized designs, direct communication, and support while your project is being built.</p>
     </div>
     <div class="proof-grid">
-      <div class="proof-card reveal"><div class="n">6+</div><div class="l">Design concepts created</div><p>Websites, social creatives, and brand assets across business types.</p></div>
+      <div class="proof-card reveal"><div class="n">10+</div><div class="l">Examples and concepts created</div><p>Websites, social creatives, brand assets, and automation demos across business types.</p></div>
       <div class="proof-card reveal"><div class="n">5–10d</div><div class="l">Average delivery time</div><p>Simple sites and design packs move quickly from idea to launch.</p></div>
       <div class="proof-card reveal"><div class="n"><span class="js-price" data-usd="$49+" data-inr="₹799+">$49+</span></div><div class="l">Affordable starting price</div><p>Useful options for small businesses that need value first.</p></div>
     </div>
@@ -595,57 +668,216 @@ footer .logo span{color:rgba(246,242,233,.55)}
   </div>
 </section>
 
-<!-- ============ PORTFOLIO ============ -->
+<!-- ============ DIGITAL SHOP ============ -->
+<section class="section products" id="products">
+  <div class="wrap">
+    <div class="product-headline">
+      <div class="section-head reveal">
+        <span class="eyebrow">Digital Shop</span>
+        <h2>Buy e-books, templates, creative packs, and small business tools.</h2>
+        <p>Start with a low-cost digital product, order a fixed-scope pack, or request early access to lightweight tools built for growing businesses.</p>
+      </div>
+      <div class="product-guide reveal">
+        <b>Simple purchase flow for now.</b>
+        <p>Pick the product you want and send a WhatsApp request. We will reply with payment and delivery details, or recommend the right pack if you are not sure yet.</p>
+        <div class="product-tabs" aria-label="Offer categories">
+          <span>E-books & Templates</span>
+          <span>Creative Packs</span>
+          <span>WhatsApp Bots</span>
+          <span>Apps & Tools</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="product-grid">
+      <article class="product-family reveal">
+        <div class="family-top">
+          <div>
+            <div class="family-type">Digital downloads</div>
+            <h3>E-books & Templates</h3>
+            <p class="family-copy">Practical guides, checklists, and reusable templates for founders and small businesses improving their online presence.</p>
+          </div>
+          <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 5.5A2.5 2.5 0 0 1 7.5 3H20v16H7.5A2.5 2.5 0 0 0 5 21.5v-16Z"/><path d="M5 5.5A2.5 2.5 0 0 1 7.5 8H20M9 12h7M9 15h5"/></svg></div>
+        </div>
+        <div class="offer-stack">
+          <div class="offer-mini">
+            <div class="offer-mini-head"><h4>Website Launch E-book</h4><span class="status ready">Available</span></div>
+            <p>A plain-English guide for planning a business website, writing the right pages, and avoiding launch mistakes.</p>
+            <div class="offer-meta"><strong><span class="js-price" data-usd="$9" data-inr="₹299">$9</span></strong><a href="https://wa.me/918638569953?text=Hi%20Aestheria%2C%20I%20want%20to%20buy%20the%20Website%20Launch%20E-book." target="_blank" rel="noopener">Buy on WhatsApp →</a></div>
+          </div>
+          <div class="offer-mini">
+            <div class="offer-mini-head"><h4>Instagram Content Starter Kit</h4><span class="status ready">Available</span></div>
+            <p>30 post ideas, captions, hook prompts, and simple content buckets for cafes, shops, coaches, and local services.</p>
+            <div class="offer-meta"><strong><span class="js-price" data-usd="$19" data-inr="₹499">$19</span></strong><a href="https://wa.me/918638569953?text=Hi%20Aestheria%2C%20I%20want%20to%20buy%20the%20Instagram%20Content%20Starter%20Kit." target="_blank" rel="noopener">Buy kit →</a></div>
+          </div>
+          <div class="offer-mini">
+            <div class="offer-mini-head"><h4>Small Business AI Prompt Pack</h4><span class="status ready">Available</span></div>
+            <p>Reusable prompts for offers, captions, FAQs, ad copy, customer replies, and website sections.</p>
+            <div class="offer-meta"><strong><span class="js-price" data-usd="$19" data-inr="₹499">$19</span></strong><a href="https://wa.me/918638569953?text=Hi%20Aestheria%2C%20I%20want%20to%20buy%20the%20Small%20Business%20AI%20Prompt%20Pack." target="_blank" rel="noopener">Buy prompts →</a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-family reveal">
+        <div class="family-top">
+          <div>
+            <div class="family-type">Ready to order</div>
+            <h3>Creative Packs</h3>
+            <p class="family-copy">Fixed deliverables for shops, creators, coaches, cafes, and local businesses that need polished marketing assets fast.</p>
+          </div>
+          <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5M8 17h7"/></svg></div>
+        </div>
+        <div class="offer-stack">
+          <div class="offer-mini">
+            <div class="offer-mini-head"><h4>Social Media Launch Pack</h4><span class="status ready">Available</span></div>
+            <p>10 branded posts, 3 story templates, captions, and a simple visual direction for a cleaner feed.</p>
+            <div class="offer-meta"><strong>from <span class="js-price" data-usd="$49" data-inr="₹799">$49</span></strong><a href="https://wa.me/918638569953?text=Hi%20Aestheria%2C%20I%20want%20to%20buy%20the%20Social%20Media%20Launch%20Pack." target="_blank" rel="noopener">Order pack →</a></div>
+          </div>
+          <div class="offer-mini">
+            <div class="offer-mini-head"><h4>Deal / Promo Pack</h4><span class="status ready">Available</span></div>
+            <p>Offer posters, WhatsApp creatives, Instagram posts, and punchy copy for discounts, launches, and events.</p>
+            <div class="offer-meta"><strong>from <span class="js-price" data-usd="$49" data-inr="₹799">$49</span></strong><a href="https://wa.me/918638569953?text=Hi%20Aestheria%2C%20I%20want%20to%20buy%20the%20Deal%20%2F%20Promo%20Pack." target="_blank" rel="noopener">Create promo →</a></div>
+          </div>
+          <div class="offer-mini">
+            <div class="offer-mini-head"><h4>Brand Starter Kit</h4><span class="status ready">Available</span></div>
+            <p>Logo direction, colors, type pairing, and starter templates so a new business looks consistent everywhere.</p>
+            <div class="offer-meta"><strong>from <span class="js-price" data-usd="$99" data-inr="₹1,999">$99</span></strong><a href="https://wa.me/918638569953?text=Hi%20Aestheria%2C%20I%20want%20to%20buy%20the%20Brand%20Starter%20Kit." target="_blank" rel="noopener">Start kit →</a></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="product-family reveal">
+        <div class="family-top">
+          <div>
+            <div class="family-type">Bots & tools</div>
+            <h3>WhatsApp Bots & Apps</h3>
+            <p class="family-copy">Fast, practical automations for businesses that need to answer questions, capture leads, and follow up without missing chats.</p>
+          </div>
+          <div class="product-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4M7 10h4M7 14h8"/></svg></div>
+        </div>
+        <div class="offer-stack">
+          <div class="offer-mini">
+            <div class="offer-mini-head"><h4>WhatsApp Support Bot</h4><span class="status ready">Available</span></div>
+            <p>Answer FAQs, qualify leads, share menus/catalogues, collect details, and hand off hot conversations to a human.</p>
+            <div class="offer-meta"><strong>from <span class="js-price" data-usd="$49/mo" data-inr="₹999/mo">$49/mo</span></strong><a href="https://wa.me/918638569953?text=Hi%20Aestheria%2C%20I%20want%20to%20set%20up%20a%20WhatsApp%20Support%20Bot." target="_blank" rel="noopener">Set up bot →</a></div>
+          </div>
+          <div class="offer-mini">
+            <div class="offer-mini-head"><h4>PromoKit Lite</h4><span class="status pilot">Early access</span></div>
+            <p>Turn one offer into Instagram, WhatsApp, and poster-ready promo copy with a matching creative direction.</p>
+            <div class="offer-meta"><strong>Pilot</strong><a href="#quote">Request access →</a></div>
+          </div>
+          <div class="offer-mini">
+            <div class="offer-mini-head"><h4>LeadPage Mini</h4><span class="status pilot">Pilot build</span></div>
+            <p>A simple landing page plus inquiry tracker for one campaign, class, menu, workshop, or local offer.</p>
+            <div class="offer-meta"><strong>from <span class="js-price" data-usd="$49/mo" data-inr="₹999/mo">$49/mo</span></strong><a href="#quote">Try pilot →</a></div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="product-cta-band reveal">
+      <div>
+        <b>Need help choosing what to buy?</b>
+        <p>Send your Instagram, website, or rough idea. We will suggest the best digital product, creative pack, or pilot tool and keep the first purchase simple.</p>
+      </div>
+      <a href="https://wa.me/918638569953?text=Hi%20Aestheria%2C%20I%20need%20help%20choosing%20a%20digital%20product%20or%20pack." target="_blank" rel="noopener" class="btn btn-primary">Ask on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EXAMPLES ============ -->
 <section class="section" id="portfolio" style="background:var(--paper-2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Portfolio</span>
-      <h2>Examples across websites, social content, and brand concepts.</h2>
-      <p>Each project is labeled by business type so visitors can quickly see the variety and imagine what we can build for them.</p>
+      <span class="eyebrow">Examples</span>
+      <h2>A focused preview instead of a crowded wall of work.</h2>
+      <p>Filters now open a compact slider on the homepage. Visitors can scan a few strong examples here, then click through to the full gallery when they want more context.</p>
     </div>
-    <div class="tabs reveal" id="portTabs">
-      <button class="tab active" data-filter="all">All</button>
-      <button class="tab" data-filter="web">Websites</button>
-      <button class="tab" data-filter="social">Social Media</button>
-      <button class="tab" data-filter="brand">Branding</button>
+    <div class="portfolio-toolbar reveal">
+      <div class="tabs" id="portTabs" aria-label="Example filters">
+        <button class="tab active" data-filter="all">All</button>
+        <button class="tab" data-filter="web">Websites</button>
+        <button class="tab" data-filter="social">Social Media</button>
+        <button class="tab" data-filter="brand">Branding</button>
+        <button class="tab" data-filter="bots">Bots & Agents</button>
+      </div>
+      <a href="examples.html" class="btn btn-ghost">View all examples</a>
     </div>
-    <div class="port-grid" id="portGrid">
-      <a class="port-card reveal" data-cat="web" href="https://souvikdeb2612.github.io/greenbasket-veggies/" target="_blank" rel="noopener">
-        <div class="port-vis"><img src="assets/web-greenbasket.png" alt="Screenshot of GreenBasket Veggies online grocery storefront" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Online Grocery Storefront</span><span class="c">E-commerce</span></div>
-      </a>
-      <a class="port-card reveal" data-cat="web" href="https://fidbac.vercel.app" target="_blank" rel="noopener">
-        <div class="port-vis"><img src="assets/web-fidbac.png" alt="Screenshot of Fidbac expense tracker landing page" loading="lazy"></div>
-        <div class="port-meta"><span class="t">App Landing Page Concept</span><span class="c">Product UI</span></div>
-      </a>
-      <a class="port-card reveal" data-cat="web" href="https://oscar.samyarth.org/" target="_blank" rel="noopener">
-        <div class="port-vis"><img src="assets/web-oscar.png" alt="Screenshot of Oscar voice-first writing website" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Service Website Concept</span><span class="c">Landing page</span></div>
-      </a>
-      <a class="port-card reveal" data-cat="web" href="https://souvikdeb2612.github.io/Cake-shop/index.html" target="_blank" rel="noopener">
-        <div class="port-vis"><img src="assets/web-cake-shop.png" alt="Screenshot of a local business website" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Local Business Website Concept</span><span class="c">Website</span></div>
-      </a>
-      <a class="port-card reveal" data-cat="social" href="work/website-fixes-carousel.html" target="_blank" rel="noopener">
-        <div class="port-vis social-img"><img src="assets/social-website-fixes.jpg" alt="Interactive carousel cover about website fixes" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Website Improvement Carousel</span><span class="c">Carousel</span></div>
-      </a>
-      <a class="port-card reveal" data-cat="social" href="work/launch-checklist-carousel.html" target="_blank" rel="noopener">
-        <div class="port-vis social-img"><img src="assets/social-launch-checklist.jpg" alt="Interactive carousel cover for launch checklist" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Launch Checklist Carousel</span><span class="c">Carousel</span></div>
-      </a>
-      <a class="port-card reveal" data-cat="social" href="work/business-idea-carousel.html" target="_blank" rel="noopener">
-        <div class="port-vis social-img"><img src="assets/carousel-business-idea-01.jpg" alt="Business idea Instagram carousel preview" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Business Idea Carousel</span><span class="c">Carousel</span></div>
-      </a>
-      <a class="port-card reveal" data-cat="social" href="work/personal-brand-carousel.html" target="_blank" rel="noopener">
-        <div class="port-vis social-img"><img src="assets/carousel-personal-brand-01.jpg" alt="Personal brand Instagram carousel preview" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Personal Brand Carousel</span><span class="c">Carousel</span></div>
-      </a>
-      <a class="port-card reveal" data-cat="social" href="work/promo-pack-carousel.html" target="_blank" rel="noopener">
-        <div class="port-vis social-img"><img src="assets/social-cafe-concept.jpg" alt="Interactive promo social concept pack" loading="lazy"></div>
-        <div class="port-meta"><span class="t">Promo Pack Carousel Concept</span><span class="c">Concept</span></div>
-      </a>
+
+    <div class="portfolio-shell reveal" aria-live="polite">
+      <div class="portfolio-shell-head">
+        <div>
+          <span class="port-kicker" id="portFilterLabel">All examples</span>
+          <strong class="port-count" id="portCounter">Showing 1–3 of 11</strong>
+        </div>
+        <div class="port-controls" aria-label="Example slider controls">
+          <button class="port-nav" id="portPrev" type="button" aria-label="Previous examples"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <button class="port-nav" id="portNext" type="button" aria-label="Next examples"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+      <div class="port-viewport">
+        <div class="port-track" id="portGrid">
+          <a class="port-card reveal" data-cat="bots" href="work/whatsapp-support-bot.html" target="_blank" rel="noopener">
+            <div class="port-vis bot-visual">
+              <div class="mk-bot" aria-hidden="true">
+                <div class="bot-top"><span class="bot-dot">WA</span><span>Support Bot</span></div>
+                <div class="bot-chat">
+                  <div class="bot-msg user">Do you have slots tomorrow?</div>
+                  <div class="bot-msg agent">Yes. What service do you need?</div>
+                  <div class="bot-actions"><span>Book</span><span>Prices</span><span>Talk to human</span></div>
+                  <div class="bot-msg agent">I can collect details and notify the team.</div>
+                </div>
+              </div>
+            </div>
+            <div class="port-meta"><span class="t">WhatsApp Support Bot Implementation</span><span class="c">Bot</span></div>
+          </a>
+          <a class="port-card reveal" data-cat="web" href="https://souvikdeb2612.github.io/greenbasket-veggies/" target="_blank" rel="noopener">
+            <div class="port-vis"><img src="assets/web-greenbasket.png" alt="Screenshot of GreenBasket Veggies online grocery storefront" loading="lazy"></div>
+            <div class="port-meta"><span class="t">Online Grocery Storefront</span><span class="c">E-commerce</span></div>
+          </a>
+          <a class="port-card reveal" data-cat="social" href="work/website-fixes-carousel.html" target="_blank" rel="noopener">
+            <div class="port-vis social-img"><img src="assets/social-website-fixes.jpg" alt="Interactive carousel cover about website fixes" loading="lazy"></div>
+            <div class="port-meta"><span class="t">Website Improvement Carousel</span><span class="c">Carousel</span></div>
+          </a>
+          <a class="port-card reveal" data-cat="web" href="https://fidbac.vercel.app" target="_blank" rel="noopener">
+            <div class="port-vis"><img src="assets/web-fidbac.png" alt="Screenshot of Fidbac expense tracker landing page" loading="lazy"></div>
+            <div class="port-meta"><span class="t">App Landing Page Concept</span><span class="c">Product UI</span></div>
+          </a>
+          <a class="port-card reveal" data-cat="web" href="https://oscar.samyarth.org/" target="_blank" rel="noopener">
+            <div class="port-vis"><img src="assets/web-oscar.png" alt="Screenshot of Oscar voice-first writing website" loading="lazy"></div>
+            <div class="port-meta"><span class="t">Service Website Concept</span><span class="c">Landing page</span></div>
+          </a>
+          <a class="port-card reveal" data-cat="brand" href="work/brand-starter-kit.html" target="_blank" rel="noopener">
+            <div class="port-vis brand-visual">
+              <div class="mk-brand" aria-hidden="true">
+                <div><div class="mono">A.</div><small>Brand starter system</small></div>
+                <div class="swatches"><i style="background:#18C98C"></i><i style="background:#EE6539"></i><i style="background:#F6F2E9"></i></div>
+              </div>
+            </div>
+            <div class="port-meta"><span class="t">Brand Starter Kit Concept</span><span class="c">Branding</span></div>
+          </a>
+          <a class="port-card reveal" data-cat="web" href="https://souvikdeb2612.github.io/Cake-shop/index.html" target="_blank" rel="noopener">
+            <div class="port-vis"><img src="assets/web-cake-shop.png" alt="Screenshot of a local business website" loading="lazy"></div>
+            <div class="port-meta"><span class="t">Local Business Website Concept</span><span class="c">Website</span></div>
+          </a>
+          <a class="port-card reveal" data-cat="social" href="work/launch-checklist-carousel.html" target="_blank" rel="noopener">
+            <div class="port-vis social-img"><img src="assets/social-launch-checklist.jpg" alt="Interactive carousel cover for launch checklist" loading="lazy"></div>
+            <div class="port-meta"><span class="t">Launch Checklist Carousel</span><span class="c">Carousel</span></div>
+          </a>
+          <a class="port-card reveal" data-cat="social" href="work/business-idea-carousel.html" target="_blank" rel="noopener">
+            <div class="port-vis social-img"><img src="assets/carousel-business-idea-01.jpg" alt="Business idea Instagram carousel preview" loading="lazy"></div>
+            <div class="port-meta"><span class="t">Business Idea Carousel</span><span class="c">Carousel</span></div>
+          </a>
+          <a class="port-card reveal" data-cat="social" href="work/personal-brand-carousel.html" target="_blank" rel="noopener">
+            <div class="port-vis social-img"><img src="assets/carousel-personal-brand-01.jpg" alt="Personal brand Instagram carousel preview" loading="lazy"></div>
+            <div class="port-meta"><span class="t">Personal Brand Carousel</span><span class="c">Carousel</span></div>
+          </a>
+          <a class="port-card reveal" data-cat="social" href="work/promo-pack-carousel.html" target="_blank" rel="noopener">
+            <div class="port-vis social-img"><img src="assets/social-cafe-concept.jpg" alt="Interactive promo social concept pack" loading="lazy"></div>
+            <div class="port-meta"><span class="t">Promo Pack Carousel Concept</span><span class="c">Concept</span></div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -662,6 +894,8 @@ footer .logo span{color:rgba(246,242,233,.55)}
     <div class="price-block reveal">
       <div class="price-label">Starting Prices <small>· quick budget check</small></div>
       <div class="start-grid">
+        <div class="start-card"><b>Digital Products</b><span>E-books, templates, prompts</span><strong class="js-price" data-usd="$9" data-inr="₹299">$9</strong></div>
+        <div class="start-card"><b>WhatsApp Bot</b><span>Support, FAQs, lead capture</span><strong class="js-price" data-usd="$49/mo" data-inr="₹999/mo">$49/mo</strong></div>
         <div class="start-card"><b>Landing Page</b><span>One page to capture leads</span><strong class="js-price" data-usd="$99" data-inr="₹1,999">$99</strong></div>
         <div class="start-card"><b>Business Website</b><span>Core pages for local businesses</span><strong class="js-price" data-usd="$199" data-inr="₹3,999">$199</strong></div>
         <div class="start-card"><b>Premium Website</b><span>Custom layout or advanced needs</span><strong class="js-price" data-usd="$399+" data-inr="₹7,999+">$399+</strong></div>
@@ -913,6 +1147,12 @@ footer .logo span{color:rgba(246,242,233,.55)}
             <select id="service" name="service">
               <option value="" disabled selected>What do you want help with?</option>
               <option>Free Website Audit</option>
+              <option>E-book / Digital Download</option>
+              <option>Template / Prompt Pack</option>
+              <option>Creative Pack / Starter Pack</option>
+              <option>Apps & Tools / Early Access</option>
+              <option>WhatsApp Bot / Support Agent</option>
+              <option>Custom Web App / MVP</option>
               <option>Website Design</option>
               <option>Landing Page</option>
               <option>Business Website</option>
@@ -948,11 +1188,13 @@ footer .logo span{color:rgba(246,242,233,.55)}
     <div class="foot-grid">
       <div>
         <a href="#home" class="logo"><svg class="spark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#18C98C"/><path d="M16 6c1 5 4 8 9 9-5 1-8 4-9 9-1-5-4-8-9-9 5-1 8-4 9-9Z" fill="#0E1B14"/></svg> <span><b>Aestheria</b> <span>Studio</span></span></a>
-        <p class="foot-about">Premium-looking websites, social creatives, and brand kits for growing businesses. Big-brand polish, small-business pricing.</p>
+        <p class="foot-about">Premium-looking websites, digital products, social creatives, and brand kits for growing businesses. Big-brand polish, small-business pricing.</p>
       </div>
       <div class="foot-col">
         <h5>Services</h5>
         <a href="#services">Website Design</a>
+        <a href="#products">Digital Shop</a>
+        <a href="#products">WhatsApp Bot Setup</a>
         <a href="#services">Social Media Design</a>
         <a href="#services">Branding</a>
         <a href="#services">Marketing Assets</a>
@@ -960,6 +1202,7 @@ footer .logo span{color:rgba(246,242,233,.55)}
       <div class="foot-col">
         <h5>Studio</h5>
         <a href="#portfolio">Portfolio</a>
+        <a href="#products">Shop</a>
         <a href="#pricing">Pricing</a>
         <a href="#process">Process</a>
         <a href="#faq">FAQ</a>
@@ -1054,18 +1297,52 @@ const CONTACT_EMAIL = "aestheria.93@gmail.com";
   }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  /* ---- portfolio filter ---- */
-  const tabs = document.querySelectorAll('#portTabs .tab');
-  const cards = document.querySelectorAll('#portGrid .port-card');
+  /* ---- examples filter + slider ---- */
+  const tabs = [...document.querySelectorAll('#portTabs .tab')];
+  const track = document.getElementById('portGrid');
+  const cards = [...document.querySelectorAll('#portGrid .port-card')];
+  const prevBtn = document.getElementById('portPrev');
+  const nextBtn = document.getElementById('portNext');
+  const counter = document.getElementById('portCounter');
+  const filterLabel = document.getElementById('portFilterLabel');
+  const filterLabels = {
+    all:'All examples',
+    web:'Website examples',
+    social:'Social content',
+    brand:'Brand concepts',
+    bots:'Bots & agents'
+  };
+  let activeFilter = 'all';
+  let portPage = 0;
+  const perPage = () => window.innerWidth < 700 ? 1 : (window.innerWidth < 980 ? 2 : 3);
+  const visibleCards = () => cards.filter(card => activeFilter === 'all' || card.dataset.cat === activeFilter);
+  function updatePortfolio(reset=false){
+    if(!track || !cards.length) return;
+    if(reset) portPage = 0;
+    cards.forEach(card => card.classList.toggle('is-hidden', !(activeFilter === 'all' || card.dataset.cat === activeFilter)));
+    const visible = visibleCards();
+    const pageSize = perPage();
+    const totalPages = Math.max(1, Math.ceil(visible.length / pageSize));
+    portPage = Math.max(0, Math.min(portPage, totalPages - 1));
+    const start = portPage * pageSize;
+    const end = Math.min(start + pageSize, visible.length);
+    const target = visible[start];
+    track.style.transform = target ? `translateX(-${target.offsetLeft}px)` : 'translateX(0)';
+    counter.textContent = visible.length ? `Showing ${start + 1}–${end} of ${visible.length}` : 'No examples in this filter yet';
+    filterLabel.textContent = filterLabels[activeFilter] || 'Examples';
+    prevBtn.disabled = portPage === 0;
+    nextBtn.disabled = portPage >= totalPages - 1;
+  }
   tabs.forEach(tab => tab.addEventListener('click', () => {
     tabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
-    const f = tab.dataset.filter;
-    cards.forEach(c => {
-      const show = (f === 'all' || c.dataset.cat === f);
-      c.style.display = show ? '' : 'none';
-    });
+    activeFilter = tab.dataset.filter;
+    updatePortfolio(true);
   }));
+  prevBtn.addEventListener('click', () => { portPage -= 1; updatePortfolio(); });
+  nextBtn.addEventListener('click', () => { portPage += 1; updatePortfolio(); });
+  window.addEventListener('resize', () => updatePortfolio(), {passive:true});
+  updatePortfolio(true);
 
   /* ---- FAQ accordion ---- */
   document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => {
