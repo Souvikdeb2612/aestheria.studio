@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Examples — Aestheria Studio</title>
 <meta name="description" content="Full Aestheria Studio examples gallery across websites, WhatsApp bots, social content, and brand concepts." />
-<meta name="theme-color" content="#F7F4EF" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A1A18'/%3E%3Cg stroke='%23C0492B' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M16 6v20'/%3E%3Cpath d='M7 11l18 10'/%3E%3Cpath d='M25 11 7 21'/%3E%3C/g%3E%3C/svg%3E" />
+<meta name="theme-color" content="#F4F0E8" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232A1518'/%3E%3Cg stroke='%237E2230' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M16 6v20'/%3E%3Cpath d='M7 11l18 10'/%3E%3Cpath d='M25 11 7 21'/%3E%3C/g%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
-:root{--paper:#F7F4EF;--paper-2:#FCFAF6;--paper-dim:#EFEAE0;--ink:#1A1A18;--ink-soft:#34322B;--muted:#6E6A60;--line:rgba(26,24,20,.16);--line-soft:rgba(26,24,20,.08);--accent:#C0492B;--accent-deep:#9A3A20;--accent-bright:#DB6B43;--accent-tint:rgba(192,73,43,.10);--noir:#1C1A17;--r:6px;--font-display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif;--font-body:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif}
+:root{--paper:#F4F0E8;--paper-2:#FBF8F2;--paper-dim:#ECE6DA;--ink:#2A1518;--ink-soft:#46302F;--muted:#6E635F;--line:rgba(42,21,24,.16);--line-soft:rgba(42,21,24,.08);--accent:#7E2230;--accent-deep:#5E1622;--accent-bright:#C25665;--accent-tint:rgba(126,34,48,.10);--noir:#241316;--r:6px;--font-display:"Bricolage Grotesque","Hanken Grotesk",system-ui,sans-serif;--font-body:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:var(--font-body);background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
 .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
-.top{position:sticky;top:0;z-index:10;background:rgba(247,244,239,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top{position:sticky;top:0;z-index:10;background:rgba(244,240,232,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .top-inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .logo{display:flex;align-items:center;gap:.55rem;font-family:var(--font-display);font-weight:700;font-size:1.28rem;letter-spacing:-.025em}
 .logo svg{width:24px;height:24px}
@@ -52,23 +52,23 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.04;letter
 .cat{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-deep);border:1px solid var(--line);padding:.3rem .56rem;border-radius:3px;white-space:nowrap}
 .bot-visual{height:260px;background:var(--noir);padding:18px;display:grid;place-items:center}
 .mk-bot{width:min(100%,250px);background:#F9F5EC;border-radius:14px;padding:13px;border:1px solid rgba(255,255,255,.12)}
-.bot-top{display:flex;align-items:center;gap:9px;padding:7px 6px 11px;border-bottom:1px solid rgba(26,24,20,.08);font-size:.8rem;font-weight:700}
+.bot-top{display:flex;align-items:center;gap:9px;padding:7px 6px 11px;border-bottom:1px solid rgba(42,21,24,.08);font-size:.8rem;font-weight:700}
 .bot-dot{width:30px;height:30px;border-radius:50%;background:#25D366;display:grid;place-items:center;color:#063;font-size:.72rem;font-weight:700}
 .bot-chat{display:flex;flex-direction:column;gap:8px;padding-top:12px}
 .bot-msg{max-width:82%;padding:8px 10px;border-radius:10px;font-size:.77rem;line-height:1.25;background:#fff}
 .bot-msg.user{align-self:flex-end;background:#DCF8C6;border-bottom-right-radius:4px}
 .bot-msg.agent{align-self:flex-start;border-bottom-left-radius:4px}
 .bot-actions{display:flex;gap:6px;flex-wrap:wrap}
-.bot-actions span{font-size:.62rem;font-weight:700;color:var(--accent-deep);border:1px solid rgba(192,73,43,.3);background:var(--accent-tint);border-radius:3px;padding:5px 7px}
+.bot-actions span{font-size:.62rem;font-weight:700;color:var(--accent-deep);border:1px solid rgba(126,34,48,.3);background:var(--accent-tint);border-radius:3px;padding:5px 7px}
 .brand-visual{height:260px;background:var(--noir);padding:22px}
-.mk-brand{height:100%;border:1px solid rgba(247,244,239,.18);border-radius:5px;display:grid;place-items:center;gap:18px;color:var(--paper);text-align:center}
+.mk-brand{height:100%;border:1px solid rgba(244,240,232,.18);border-radius:5px;display:grid;place-items:center;gap:18px;color:var(--paper);text-align:center}
 .mk-brand .mono{font-family:var(--font-display);font-weight:700;font-size:2.8rem;line-height:.9;color:var(--accent-bright)}
-.mk-brand small{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,244,239,.6);margin-top:12px}
+.mk-brand small{display:block;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(244,240,232,.6);margin-top:12px}
 .swatches{display:flex;gap:8px;justify-content:center}
-.swatches i{width:26px;height:26px;border-radius:3px;border:1px solid rgba(247,244,239,.45)}
+.swatches i{width:26px;height:26px;border-radius:3px;border:1px solid rgba(244,240,232,.45)}
 .cta{margin:0 0 84px;background:var(--noir);color:var(--paper);border-radius:8px;padding:clamp(30px,4vw,42px);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
 .cta h2{font-size:clamp(1.6rem,3vw,2.2rem)}
-.cta p{color:rgba(247,244,239,.7);margin-top:.5rem}
+.cta p{color:rgba(244,240,232,.7);margin-top:.5rem}
 .cta .btn{border-color:var(--accent);background:var(--accent);color:#fff}
 .cta .btn:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
 @media(max-width:900px){.gallery{grid-template-columns:repeat(2,1fr)}.cta{grid-template-columns:1fr}.top-inner{height:auto;padding:16px 0;align-items:flex-start;flex-direction:column}}
@@ -76,7 +76,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.04;letter
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap top-inner"><a class="logo" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><g stroke="#C0492B" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg> <span><b>Aestheria</b> <span>Studio</span></span></a><nav class="nav"><a class="btn" href="index.html#portfolio">Back to homepage preview</a><a class="btn primary" href="index.html#quote">Start a project</a></nav></div></header>
+<header class="top"><div class="wrap top-inner"><a class="logo" href="index.html"><svg viewBox="0 0 24 24" aria-hidden="true"><g stroke="#7E2230" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg> <span><b>Aestheria</b> <span>Studio</span></span></a><nav class="nav"><a class="btn" href="index.html#portfolio">Back to homepage preview</a><a class="btn primary" href="index.html#quote">Start a project</a></nav></div></header>
 <main>
 <section class="hero"><div class="wrap"><div class="shead-meta"><span class="snum">—</span><span class="slabel">Full examples gallery</span></div><h1>Websites, social content, brand concepts, and WhatsApp bot implementations.</h1><p>This page keeps the homepage clean while still giving curious visitors a deeper look at the kinds of assets and automations Aestheria can build quickly.</p><div class="filter-row"><div class="tabs" id="tabs"><button class="tab active" data-filter="all">All</button><button class="tab" data-filter="web">Websites</button><button class="tab" data-filter="social">Social Media</button><button class="tab" data-filter="brand">Branding</button><button class="tab" data-filter="bots">Bots &amp; Agents</button></div><strong id="count">11 examples</strong></div></div></section>
 <section><div class="wrap"><div class="gallery" id="gallery">
@@ -90,7 +90,7 @@ h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.04;letter
 <a class="card" data-cat="social" href="work/business-idea-carousel.html"><div class="vis social"><img src="assets/carousel-business-idea-01.jpg" alt="Business idea Instagram carousel preview" loading="lazy"></div><div class="meta"><span class="title">Business Idea Carousel</span><span class="cat">Carousel</span></div></a>
 <a class="card" data-cat="social" href="work/personal-brand-carousel.html"><div class="vis social"><img src="assets/carousel-personal-brand-01.jpg" alt="Personal brand Instagram carousel preview" loading="lazy"></div><div class="meta"><span class="title">Personal Brand Carousel</span><span class="cat">Carousel</span></div></a>
 <a class="card" data-cat="social" href="work/promo-pack-carousel.html"><div class="vis social"><img src="assets/social-cafe-concept.jpg" alt="Interactive promo social concept pack" loading="lazy"></div><div class="meta"><span class="title">Promo Pack Carousel Concept</span><span class="cat">Concept</span></div></a>
-<a class="card" data-cat="brand" href="work/brand-starter-kit.html"><div class="brand-visual"><div class="mk-brand" aria-hidden="true"><div><div class="mono">A.</div><small>Brand starter system</small></div><div class="swatches"><i style="background:#C0492B"></i><i style="background:#1A1A18"></i><i style="background:#F7F4EF"></i></div></div></div><div class="meta"><span class="title">Brand Starter Kit Concept</span><span class="cat">Branding</span></div></a>
+<a class="card" data-cat="brand" href="work/brand-starter-kit.html"><div class="brand-visual"><div class="mk-brand" aria-hidden="true"><div><div class="mono">A.</div><small>Brand starter system</small></div><div class="swatches"><i style="background:#7E2230"></i><i style="background:#2A1518"></i><i style="background:#F4F0E8"></i></div></div></div><div class="meta"><span class="title">Brand Starter Kit Concept</span><span class="cat">Branding</span></div></a>
 </div><div class="cta"><div><h2>Need one of these for your business?</h2><p>Send your idea, website, Instagram, or WhatsApp workflow. We will suggest the fastest useful build.</p></div><a class="btn" href="https://wa.me/918638569953?text=Hi%20Aestheria%2C%20I%20saw%20the%20examples%20gallery%20and%20want%20to%20start%20a%20project." target="_blank" rel="noopener">Message on WhatsApp</a></div></div></section>
 </main>
 <script>
