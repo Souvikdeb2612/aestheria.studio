@@ -269,11 +269,13 @@ header.nav.scrolled{background:rgba(247,244,239,.88);backdrop-filter:blur(12px);
 .price-block:last-child{margin-bottom:0}
 .price-label{font-family:var(--font-display);font-weight:600;font-size:1.45rem;margin-bottom:6px;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap;letter-spacing:-.02em}
 .price-label small{font-family:var(--font-body);font-size:.84rem;font-weight:500;color:var(--muted)}
-.start-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(168px,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line);margin-top:24px}
-.start-card{padding:22px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.start-card b{display:block;font-family:var(--font-display);font-weight:600;font-size:1.08rem;margin-bottom:.25rem}
-.start-card span{display:block;color:var(--muted);font-size:.86rem}
-.start-card strong{display:block;font-family:var(--font-display);font-weight:600;font-size:1.85rem;color:var(--accent-deep);line-height:1;margin-top:.7rem;letter-spacing:-.02em}
+.price-strip{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--paper-2);margin-top:24px}
+.price-strip li{flex:1 1 150px;padding:18px 22px;border-right:1px solid var(--line)}
+.price-strip li:last-child{border-right:0}
+.ps-k{display:block;font-size:.8rem;color:var(--muted);font-weight:500;margin-bottom:.4rem}
+.ps-v{display:block;font-family:var(--font-display);font-weight:600;font-size:1.4rem;color:var(--accent-deep);letter-spacing:-.02em}
+.ps-v i{font-style:normal;font-family:var(--font-body);font-size:.76rem;color:var(--muted);font-weight:500;letter-spacing:0}
+@media(max-width:600px){.price-strip{flex-direction:column}.price-strip li{border-right:0;border-bottom:1px solid var(--line)}.price-strip li:last-child{border-bottom:0}}
 .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
 .price-card{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:34px 30px;position:relative;transition:border-color .25s}
 .price-card:hover{border-color:var(--ink)}
@@ -831,16 +833,14 @@ html.js .reveal.in{opacity:1;transform:none}
     </div>
 
     <div class="price-block reveal">
-      <div class="price-label">Starting Prices <small>· quick budget check</small></div>
-      <div class="start-grid">
-        <div class="start-card"><b>Digital Products</b><span>E-books, templates, prompts</span><strong class="js-price" data-usd="$9" data-inr="₹299">$9</strong></div>
-        <div class="start-card"><b>WhatsApp Bot</b><span>Support, FAQs, lead capture</span><strong class="js-price" data-usd="$49/mo" data-inr="₹999/mo">$49/mo</strong></div>
-        <div class="start-card"><b>Landing Page</b><span>One page to capture leads</span><strong class="js-price" data-usd="$99" data-inr="₹1,999">$99</strong></div>
-        <div class="start-card"><b>Business Website</b><span>Core pages for local businesses</span><strong class="js-price" data-usd="$199" data-inr="₹3,999">$199</strong></div>
-        <div class="start-card"><b>Premium Website</b><span>Custom layout or advanced needs</span><strong class="js-price" data-usd="$399+" data-inr="₹7,999+">$399+</strong></div>
-        <div class="start-card"><b>Social Media Pack</b><span>Ready-to-post brand creatives</span><strong class="js-price" data-usd="$49" data-inr="₹799">$49</strong></div>
-        <div class="start-card"><b>Free Audit</b><span>Website or online presence review</span><strong class="js-price" data-usd="$0" data-inr="Free">$0</strong></div>
-      </div>
+      <div class="price-label">Starting points <small>· quick budget check</small></div>
+      <ul class="price-strip">
+        <li><span class="ps-k">Digital products</span><span class="ps-v"><i>from</i> <span class="js-price" data-usd="$9" data-inr="₹299">$9</span></span></li>
+        <li><span class="ps-k">Landing page</span><span class="ps-v"><i>from</i> <span class="js-price" data-usd="$99" data-inr="₹1,999">$99</span></span></li>
+        <li><span class="ps-k">Website</span><span class="ps-v"><i>from</i> <span class="js-price" data-usd="$199" data-inr="₹3,999">$199</span></span></li>
+        <li><span class="ps-k">Social media</span><span class="ps-v"><i>from</i> <span class="js-price" data-usd="$49" data-inr="₹799">$49</span></span></li>
+        <li><span class="ps-k">Free website audit</span><span class="ps-v"><span class="js-price" data-usd="$0" data-inr="Free">$0</span></span></li>
+      </ul>
     </div>
 
     <!-- website packages -->
