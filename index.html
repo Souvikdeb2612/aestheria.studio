@@ -11,8 +11,9 @@
 <meta property="og:url" content="https://aestheria.xyz" />
 <meta name="theme-color" content="#F4F0E8" />
 
-<!-- ===== FAVICON (inline SVG — ink tile, terracotta asterisk) ===== -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232A1518'/%3E%3Cg stroke='%237E2230' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M16 6v20'/%3E%3Cpath d='M7 11l18 10'/%3E%3Cpath d='M25 11 7 21'/%3E%3C/g%3E%3C/svg%3E" />
+<!-- ===== FAVICON (A-monogram) ===== -->
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
 <!-- ===== FONTS — Bricolage Grotesque (display) + Hanken Grotesk (text) ===== -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -91,7 +92,8 @@ header.nav{position:sticky;top:0;z-index:1000;background:var(--paper);border-bot
 header.nav.scrolled{background:rgba(244,240,232,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1rem;min-width:0}
 .logo{display:flex;align-items:center;gap:.55rem;font-family:var(--font-display);font-weight:700;font-size:1.3rem;letter-spacing:-.025em;min-width:0;flex:0 0 auto}
-.logo .spark{width:24px;height:24px;flex:none}
+.logo .spark{width:26px;height:26px;flex:none;background:var(--accent);-webkit-mask:url(assets/aestheria-mark.png) center/contain no-repeat;mask:url(assets/aestheria-mark.png) center/contain no-repeat}
+footer .logo .spark{background:var(--accent-bright)}
 .logo b{font-weight:700}
 .logo span{color:var(--muted);font-weight:500}
 .logo-text{white-space:nowrap}
@@ -478,7 +480,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="#home" class="logo" aria-label="Aestheria Studio home">
-      <svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#7E2230" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg>
+      <span class="spark" aria-hidden="true"></span>
       <span class="logo-text"><b>Aestheria</b> <span>Studio</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
@@ -1126,7 +1128,7 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a href="#home" class="logo"><svg class="spark" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#C25665" stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg> <span><b>Aestheria</b> <span>Studio</span></span></a>
+        <a href="#home" class="logo"><span class="spark" aria-hidden="true"></span> <span><b>Aestheria</b> <span>Studio</span></span></a>
         <p class="foot-about">Premium-looking websites, digital products, social creatives, and brand kits for growing businesses. Big-brand polish, small-business pricing.</p>
       </div>
       <div class="foot-col">
