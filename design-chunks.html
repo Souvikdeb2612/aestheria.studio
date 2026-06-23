@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aestheria — design chunks in 3 palettes (temporary)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+/* ===== shared editorial system — every color via var(), palette set per .t-* wrapper ===== */
+:root{--fd:"Bricolage Grotesque","Hanken Grotesk",sans-serif;--fb:"Hanken Grotesk",system-ui,sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);background:#22242a;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{max-width:100%;display:block}a{color:inherit;text-decoration:none}ul{list-style:none}
+
+/* palette wrappers */
+.t-cobalt{--paper:#F2F1EC;--paper-2:#FAFAF7;--paper-dim:#E9E8E2;--ink:#15171C;--ink-soft:#2C2F37;--muted:#65676E;--line:rgba(21,23,28,.16);--line-soft:rgba(21,23,28,.08);--accent:#2440E0;--accent-deep:#1B2FB0;--accent-bright:#6B82FF;--accent-tint:rgba(36,64,224,.10);--noir:#13151B}
+.t-oxblood{--paper:#F4F0E8;--paper-2:#FBF8F2;--paper-dim:#ECE6DA;--ink:#2A1518;--ink-soft:#46302F;--muted:#6E635F;--line:rgba(42,21,24,.16);--line-soft:rgba(42,21,24,.08);--accent:#7E2230;--accent-deep:#5E1622;--accent-bright:#C25665;--accent-tint:rgba(126,34,48,.10);--noir:#241316}
+.t-gold{--paper:#EFEFEC;--paper-2:#F8F8F5;--paper-dim:#E5E5E0;--ink:#1B1E22;--ink-soft:#34373C;--muted:#66686C;--line:rgba(27,30,34,.16);--line-soft:rgba(27,30,34,.08);--accent:#B07A12;--accent-deep:#8A5E08;--accent-bright:#E0A93B;--accent-tint:rgba(176,122,18,.12);--noir:#191B1F}
+.t-terra{--paper:#F7F4EF;--paper-2:#FCFAF6;--paper-dim:#EFEAE0;--ink:#1A1A18;--ink-soft:#34322B;--muted:#6E6A60;--line:rgba(26,24,20,.16);--line-soft:rgba(26,24,20,.08);--accent:#C0492B;--accent-deep:#9A3A20;--accent-bright:#DB6B43;--accent-tint:rgba(192,73,43,.10);--noir:#1C1A17}
+
+.t{background:var(--paper);color:var(--ink)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+.t h1,.t h2,.t h3,.t h4{font-family:var(--fd);font-weight:600;line-height:1.02;letter-spacing:-.02em}
+.u-acc{color:var(--accent);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:7px;text-decoration-color:color-mix(in srgb,var(--accent) 50%,transparent)}
+
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--fb);font-weight:600;font-size:.95rem;padding:.9rem 1.4rem;border-radius:4px;border:1.5px solid transparent;cursor:pointer;line-height:1}
+.btn-primary{background:var(--ink);color:var(--paper)}
+.btn-accent{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
+
+/* nav (static in preview) */
+.nav{border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.55rem;font-family:var(--fd);font-weight:700;font-size:1.3rem;letter-spacing:-.025em}
+.logo svg{width:24px;height:24px}
+.logo svg g{stroke:var(--accent)}
+.logo b{font-weight:700}.logo span{color:var(--muted);font-weight:500}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.95rem;font-weight:500;color:var(--ink-soft)}
+.nav-cta{display:flex;align-items:center;gap:.7rem}
+
+/* hero */
+.hero{padding:72px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:56px;align-items:center}
+.tag-line{display:inline-flex;align-items:center;gap:.6rem;font-size:.82rem;font-weight:600;color:var(--ink-soft);border:1px solid var(--line);border-radius:4px;padding:.5rem .85rem}
+.tag-line .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.hero h1{font-size:clamp(2.6rem,5vw,4.2rem);margin:1.5rem 0 1.3rem;letter-spacing:-.035em}
+.hero p.sub{font-size:1.15rem;color:var(--muted);max-width:42ch;margin-bottom:2rem}
+.hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+.trust{display:flex;align-items:center;gap:1.4rem;margin-top:2.4rem;flex-wrap:wrap}
+.stars{color:var(--accent);letter-spacing:2px}
+.trust small{color:var(--muted);font-size:.86rem}.trust b{font-family:var(--fd);font-weight:600;color:var(--ink)}
+.trust .vline{width:1px;height:34px;background:var(--line)}
+.mock{border:1px solid var(--ink);border-radius:6px;overflow:hidden;background:var(--paper-2)}
+.mock-bar{display:flex;gap:6px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.mock-bar span{width:9px;height:9px;border-radius:50%;border:1px solid var(--line)}
+.mock-body{background:var(--noir);padding:30px 28px 34px}
+.mock-eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.mock-head{font-family:var(--fd);font-weight:600;color:#fff;font-size:1.85rem;line-height:1.08;margin:1rem 0 1.5rem;letter-spacing:-.02em}
+.mock-head b{color:var(--accent-bright);font-weight:600}
+.mock-tag{display:inline-block;background:var(--accent);color:#fff;font-weight:600;font-size:.74rem;padding:.4rem .8rem;border-radius:3px}
+.hero-stats{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-top:0}
+.hstat{padding:18px 22px;border-right:1px solid var(--line)}.hstat:last-child{border-right:0}
+.hstat b{display:block;font-family:var(--fd);font-weight:600;font-size:1.7rem;color:var(--accent-deep);line-height:1}
+.hstat span{display:block;font-size:.82rem;color:var(--muted);margin-top:.35rem}
+
+/* capability strip */
+.capstrip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-dim)}
+.caprow{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:center;padding:18px 24px}
+.caprow span{font-size:.76rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.caprow i{color:var(--accent);font-style:normal;font-size:.7rem}
+
+/* section + head */
+.section{padding:84px 0;border-top:1px solid var(--line)}
+.section.dim{background:var(--paper-dim)}
+.shead{max-width:760px;margin-bottom:48px}
+.shead-meta{display:flex;align-items:baseline;gap:14px;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:26px}
+.snum{font-family:var(--fd);font-weight:600;font-size:.95rem;color:var(--accent)}
+.slabel{font-weight:600;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.shead h2{font-size:clamp(1.9rem,3.6vw,2.9rem)}
+.shead p{color:var(--muted);font-size:1.05rem;margin-top:16px;max-width:58ch}
+
+/* services grid */
+.svc-grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.svc-card{padding:36px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.svc-idx{font-family:var(--fd);font-weight:600;font-size:.9rem;color:var(--accent)}
+.svc-ico{color:var(--ink);opacity:.85}.svc-ico svg{width:26px;height:26px}
+.svc-card h3{font-size:1.45rem;margin-bottom:1rem}
+.svc-list{display:flex;flex-wrap:wrap;gap:.5rem}
+.svc-list li{font-size:.85rem;font-weight:500;color:var(--ink-soft);border:1px solid var(--line);border-radius:3px;padding:.36rem .7rem}
+
+/* pricing tier row */
+.price-label{font-family:var(--fd);font-weight:600;font-size:1.4rem;margin-bottom:22px;display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.price-label small{font-family:var(--fb);font-size:.84rem;font-weight:500;color:var(--muted)}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.price-card{background:var(--paper-2);border:1px solid var(--line);border-radius:6px;padding:32px 28px;position:relative}
+.price-card.feat{background:var(--noir);color:#fff;border-color:var(--noir)}
+.price-card.feat .pc-desc{color:rgba(255,255,255,.66)}
+.price-card.feat .amt small{color:rgba(255,255,255,.6)}
+.price-card.feat .pc-feat li{color:rgba(255,255,255,.9)}
+.price-card.feat .pc-feat li svg{color:var(--accent-bright)}
+.price-card.feat .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+.tagpop{position:absolute;top:-1px;right:-1px;background:var(--accent);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.34rem .7rem;border-radius:0 6px 0 6px}
+.pc-name{font-family:var(--fd);font-weight:600;font-size:1.3rem;margin-bottom:.4rem}
+.pc-desc{font-size:.9rem;color:var(--muted);margin-bottom:1.2rem}
+.amt{font-family:var(--fd);font-weight:600;font-size:2.6rem;line-height:1;margin-bottom:.2rem;letter-spacing:-.03em}
+.amt small{font-size:.9rem;font-family:var(--fb);color:var(--muted);font-weight:500}
+.pc-feat{margin:1.3rem 0;display:flex;flex-direction:column;gap:.7rem}
+.pc-feat li{display:flex;align-items:center;gap:.6rem;font-size:.92rem}
+.pc-feat li svg{width:16px;height:16px;color:var(--accent);flex:none}
+.price-card .btn{width:100%;justify-content:center}
+
+/* offer dark band */
+.offer{background:var(--noir);color:#fff;border-radius:8px;padding:54px;margin-top:8px}
+.offer-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.fire{font-size:.74rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-bright);display:inline-flex;gap:.5rem;align-items:center}
+.fire::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent-bright)}
+.offer h2{font-size:2.3rem;color:#fff;margin:1.1rem 0 1.3rem}
+.offer h2 em{font-style:normal;color:var(--accent-bright)}
+.offer-perks{display:flex;flex-direction:column;gap:.8rem;margin-bottom:1.8rem}
+.offer-perks li{display:flex;align-items:center;gap:.8rem;color:rgba(255,255,255,.92)}
+.offer-perks li .ck{width:26px;height:26px;border-radius:4px;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;color:var(--accent-bright);flex:none}
+.offer-perks li .ck svg{width:14px;height:14px}
+.countdown{border:1px solid rgba(255,255,255,.18);border-radius:6px;padding:28px}
+.countdown .lab{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:1rem;font-weight:600}
+.cd-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(255,255,255,.16);border-radius:4px;overflow:hidden;margin-bottom:1.2rem}
+.cd-unit{padding:14px 6px;text-align:center;border-right:1px solid rgba(255,255,255,.16)}.cd-unit:last-child{border-right:0}
+.cd-unit .num{font-family:var(--fd);font-weight:600;font-size:1.9rem;color:#fff;line-height:1}
+.cd-unit .u{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.3rem}
+.spots{font-size:.88rem;color:rgba(255,255,255,.72);text-align:center}.spots b{color:var(--accent-bright)}
+
+/* footer */
+.foot{background:var(--noir);color:#fff;padding:60px 0 32px}
+.foot .logo{color:#fff;margin-bottom:1rem}.foot .logo svg g{stroke:var(--accent-bright)}.foot .logo span{color:rgba(255,255,255,.5)}
+.foot-about{color:rgba(255,255,255,.62);font-size:.94rem;max-width:34ch;line-height:1.6}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.foot-col h5{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1rem;font-weight:700}
+.foot-col a{display:block;color:rgba(255,255,255,.8);font-size:.94rem;padding:.34rem 0}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:24px;font-size:.85rem;color:rgba(255,255,255,.5)}
+
+/* preview chrome */
+.label{position:sticky;top:0;z-index:5;background:#16181d;color:#fff;font-family:var(--fb);display:flex;align-items:center;gap:14px;padding:12px 24px;border-bottom:1px solid rgba(255,255,255,.12)}
+.label .n{font-family:var(--fd);font-weight:700;font-size:1.05rem}
+.label .sw{display:flex;gap:5px;margin-left:auto}.label .sw i{width:20px;height:20px;border-radius:3px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.2)}
+.intro{color:#fff;font-family:var(--fb);max-width:900px;margin:0 auto;padding:34px 24px}
+.intro h1{font-family:var(--fd);font-weight:600;font-size:1.9rem;letter-spacing:-.03em}
+.intro p{color:rgba(255,255,255,.7);margin-top:10px;line-height:1.6}
+.intro code{background:rgba(255,255,255,.1);border-radius:4px;padding:.1rem .4rem}
+@media(max-width:880px){.hero-grid,.offer-inner,.foot-grid{grid-template-columns:1fr;gap:30px}.svc-grid,.price-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Same design, three palettes</h1>
+  <p>Real components from the site — nav, hero, services grid, pricing tiers (with the dark featured-card inversion), the offer band, and footer — rendered in each palette. Only the color tokens change. Tell me a number, or mix (e.g. “Oxblood surfaces, Cobalt accent”). I'll then apply the winner across <code>index.html</code>, <code>examples.html</code>, and the <code>work/</code> page chrome, and delete this file.</p>
+</div>
+
+<!-- ============================ 0 · TERRACOTTA (current) ============================ -->
+<div class="label"><span class="n">0 · Terracotta</span><span style="color:rgba(255,255,255,.6);font-size:.85rem">current — warm but close to Claude's brand</span><span class="sw"><i style="background:#F7F4EF"></i><i style="background:#1A1A18"></i><i style="background:#C0492B"></i><i style="background:#1C1A17"></i></span></div>
+<div class="t t-terra">
+  <header class="nav"><div class="wrap nav-inner">
+    <a class="logo"><svg viewBox="0 0 24 24"><g stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg><span><b>Aestheria</b> <span>Studio</span></span></a>
+    <nav class="nav-links"><a>Services</a><a>Shop</a><a>Portfolio</a><a>Pricing</a><a>FAQ</a></nav>
+    <div class="nav-cta"><a class="btn btn-ghost">View work</a><a class="btn btn-accent">Get a free website audit</a></div>
+  </div></header>
+  <section class="hero"><div class="wrap hero-grid">
+    <div>
+      <span class="tag-line"><span class="dot"></span>Now booking first clients · free website audit available</span>
+      <h1>Affordable websites &amp; digital design for <span class="u-acc">growing</span> businesses.</h1>
+      <p class="sub">Websites, WhatsApp bots, digital products, branding, and social designs — starting from $9.</p>
+      <div class="hero-btns"><a class="btn btn-primary">Get a free website audit →</a><a class="btn btn-ghost">Visit the shop</a></div>
+      <div class="trust"><div><div class="stars">★★★★★</div><small>Built for local shops, creators, and service businesses</small></div><div class="vline"></div><div><small><b>From $49</b><br>Clear launch pricing</small></div></div>
+    </div>
+    <div>
+      <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><span class="mock-eyebrow">Your new site</span><div class="mock-head">More enquiries,<br><b>less design stress.</b></div><span class="mock-tag">Live in days</span></div></div>
+      <div class="hero-stats"><div class="hstat"><b>5–10d</b><span>average delivery</span></div><div class="hstat"><b>$49</b><span>launch pricing</span></div></div>
+    </div>
+  </div></section>
+  <div class="capstrip"><div class="wrap caprow"><span>Websites</span><i>·</i><span>WhatsApp Bots</span><i>·</i><span>Chat Agents</span><i>·</i><span>E-books</span><i>·</i><span>Templates</span><i>·</i><span>Creative Packs</span><i>·</i><span>Social Media</span><i>·</i><span>Web Apps</span></div></div>
+  <section class="section"><div class="wrap">
+    <div class="shead"><div class="shead-meta"><span class="snum">01</span><span class="slabel">What we do</span></div><h2>Websites, branding, and social posts that get more enquiries.</h2><p>Clear, affordable design support for small businesses that need to launch quickly and look credible.</p></div>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-top"><span class="svc-idx">01 / 04</span><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div></div><h3>Website Design</h3><ul class="svc-list"><li>Landing Pages</li><li>Business Websites</li><li>E-commerce</li><li>Redesigns</li></ul></div>
+      <div class="svc-card"><div class="svc-top"><span class="svc-idx">02 / 04</span><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div></div><h3>Social Media Design</h3><ul class="svc-list"><li>Posts</li><li>Carousels</li><li>Story Templates</li><li>Reels Covers</li></ul></div>
+    </div>
+  </div></section>
+  <section class="section dim"><div class="wrap">
+    <div class="price-label">Website Packages <small>· built for any stage</small></div>
+    <div class="price-grid">
+      <div class="price-card"><div class="pc-name">Starter</div><div class="pc-desc">A clean one-pager to get online fast.</div><div class="amt">$199</div><div class="amt"><small>1–3 pages</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Mobile-friendly</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Contact form</li></ul><a class="btn btn-ghost">Get started</a></div>
+      <div class="price-card feat"><span class="tagpop">Most popular</span><div class="pc-name">Business</div><div class="pc-desc">A full site to win customers.</div><div class="amt">$399</div><div class="amt"><small>up to 5 pages</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Custom layout &amp; branding</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Maps &amp; socials</li></ul><a class="btn btn-accent">Get started</a></div>
+      <div class="price-card"><div class="pc-name">Premium</div><div class="pc-desc">Fully custom, store or advanced.</div><div class="amt">$399+</div><div class="amt"><small>custom build</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Online store / booking</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Priority support</li></ul><a class="btn btn-ghost">Get started</a></div>
+    </div>
+  </div></section>
+  <section class="section"><div class="wrap"><div class="offer"><div class="offer-inner">
+    <div><span class="fire">New client offer</span><h2>Get a <em>free website audit</em> before you spend anything.</h2><ul class="offer-perks"><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free review of your current site</li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free homepage mockup before you pay</li></ul><a class="btn btn-accent">Get my free audit →</a></div>
+    <div class="countdown"><div class="lab">Offer ends in</div><div class="cd-grid"><div class="cd-unit"><div class="num">07</div><div class="u">Days</div></div><div class="cd-unit"><div class="num">12</div><div class="u">Hrs</div></div><div class="cd-unit"><div class="num">45</div><div class="u">Min</div></div><div class="cd-unit"><div class="num">03</div><div class="u">Sec</div></div></div><div class="spots"><b>3 launch-offer spots</b> available this month.</div></div>
+  </div></div></div></section>
+  <footer class="foot"><div class="wrap"><div class="foot-grid">
+    <div><a class="logo"><svg viewBox="0 0 24 24"><g stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg><span><b>Aestheria</b> <span>Studio</span></span></a><p class="foot-about">Big-brand polish, small-business pricing.</p></div>
+    <div class="foot-col"><h5>Services</h5><a>Website Design</a><a>Digital Shop</a><a>Branding</a></div>
+    <div class="foot-col"><h5>Get started</h5><a>Free website audit</a><a>WhatsApp</a><a>Instagram</a></div>
+  </div><div class="foot-bottom">© 2026 Aestheria Studio.</div></div></footer>
+</div>
+
+<!-- ============================ 1 · COBALT ============================ -->
+<div class="label"><span class="n">1 · Ink &amp; Cobalt</span><span style="color:rgba(255,255,255,.6);font-size:.85rem">cool · crisp · trustworthy</span><span class="sw"><i style="background:#F2F1EC"></i><i style="background:#15171C"></i><i style="background:#2440E0"></i><i style="background:#13151B"></i></span></div>
+<div class="t t-cobalt">
+  <header class="nav"><div class="wrap nav-inner">
+    <a class="logo"><svg viewBox="0 0 24 24"><g stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg><span><b>Aestheria</b> <span>Studio</span></span></a>
+    <nav class="nav-links"><a>Services</a><a>Shop</a><a>Portfolio</a><a>Pricing</a><a>FAQ</a></nav>
+    <div class="nav-cta"><a class="btn btn-ghost">View work</a><a class="btn btn-accent">Get a free website audit</a></div>
+  </div></header>
+  <section class="hero"><div class="wrap hero-grid">
+    <div>
+      <span class="tag-line"><span class="dot"></span>Now booking first clients · free website audit available</span>
+      <h1>Affordable websites &amp; digital design for <span class="u-acc">growing</span> businesses.</h1>
+      <p class="sub">Websites, WhatsApp bots, digital products, branding, and social designs — starting from $9.</p>
+      <div class="hero-btns"><a class="btn btn-primary">Get a free website audit →</a><a class="btn btn-ghost">Visit the shop</a></div>
+      <div class="trust"><div><div class="stars">★★★★★</div><small>Built for local shops, creators, and service businesses</small></div><div class="vline"></div><div><small><b>From $49</b><br>Clear launch pricing</small></div></div>
+    </div>
+    <div>
+      <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><span class="mock-eyebrow">Your new site</span><div class="mock-head">More enquiries,<br><b>less design stress.</b></div><span class="mock-tag">Live in days</span></div></div>
+      <div class="hero-stats"><div class="hstat"><b>5–10d</b><span>average delivery</span></div><div class="hstat"><b>$49</b><span>launch pricing</span></div></div>
+    </div>
+  </div></section>
+  <div class="capstrip"><div class="wrap caprow"><span>Websites</span><i>·</i><span>WhatsApp Bots</span><i>·</i><span>Chat Agents</span><i>·</i><span>E-books</span><i>·</i><span>Templates</span><i>·</i><span>Creative Packs</span><i>·</i><span>Social Media</span><i>·</i><span>Web Apps</span></div></div>
+  <section class="section"><div class="wrap">
+    <div class="shead"><div class="shead-meta"><span class="snum">01</span><span class="slabel">What we do</span></div><h2>Websites, branding, and social posts that get more enquiries.</h2><p>Clear, affordable design support for small businesses that need to launch quickly and look credible.</p></div>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-top"><span class="svc-idx">01 / 04</span><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div></div><h3>Website Design</h3><ul class="svc-list"><li>Landing Pages</li><li>Business Websites</li><li>E-commerce</li><li>Redesigns</li></ul></div>
+      <div class="svc-card"><div class="svc-top"><span class="svc-idx">02 / 04</span><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div></div><h3>Social Media Design</h3><ul class="svc-list"><li>Posts</li><li>Carousels</li><li>Story Templates</li><li>Reels Covers</li></ul></div>
+    </div>
+  </div></section>
+  <section class="section dim"><div class="wrap">
+    <div class="price-label">Website Packages <small>· built for any stage</small></div>
+    <div class="price-grid">
+      <div class="price-card"><div class="pc-name">Starter</div><div class="pc-desc">A clean one-pager to get online fast.</div><div class="amt">$199</div><div class="amt"><small>1–3 pages</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Mobile-friendly</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Contact form</li></ul><a class="btn btn-ghost">Get started</a></div>
+      <div class="price-card feat"><span class="tagpop">Most popular</span><div class="pc-name">Business</div><div class="pc-desc">A full site to win customers.</div><div class="amt">$399</div><div class="amt"><small>up to 5 pages</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Custom layout &amp; branding</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Maps &amp; socials</li></ul><a class="btn btn-accent">Get started</a></div>
+      <div class="price-card"><div class="pc-name">Premium</div><div class="pc-desc">Fully custom, store or advanced.</div><div class="amt">$399+</div><div class="amt"><small>custom build</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Online store / booking</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Priority support</li></ul><a class="btn btn-ghost">Get started</a></div>
+    </div>
+  </div></section>
+  <section class="section"><div class="wrap"><div class="offer"><div class="offer-inner">
+    <div><span class="fire">New client offer</span><h2>Get a <em>free website audit</em> before you spend anything.</h2><ul class="offer-perks"><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free review of your current site</li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free homepage mockup before you pay</li></ul><a class="btn btn-accent">Get my free audit →</a></div>
+    <div class="countdown"><div class="lab">Offer ends in</div><div class="cd-grid"><div class="cd-unit"><div class="num">07</div><div class="u">Days</div></div><div class="cd-unit"><div class="num">12</div><div class="u">Hrs</div></div><div class="cd-unit"><div class="num">45</div><div class="u">Min</div></div><div class="cd-unit"><div class="num">03</div><div class="u">Sec</div></div></div><div class="spots"><b>3 launch-offer spots</b> available this month.</div></div>
+  </div></div></div></section>
+  <footer class="foot"><div class="wrap"><div class="foot-grid">
+    <div><a class="logo"><svg viewBox="0 0 24 24"><g stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg><span><b>Aestheria</b> <span>Studio</span></span></a><p class="foot-about">Big-brand polish, small-business pricing.</p></div>
+    <div class="foot-col"><h5>Services</h5><a>Website Design</a><a>Digital Shop</a><a>Branding</a></div>
+    <div class="foot-col"><h5>Get started</h5><a>Free website audit</a><a>WhatsApp</a><a>Instagram</a></div>
+  </div><div class="foot-bottom">© 2026 Aestheria Studio.</div></div></footer>
+</div>
+
+<!-- ============================ 2 · OXBLOOD ============================ -->
+<div class="label"><span class="n">2 · Oxblood</span><span style="color:rgba(255,255,255,.6);font-size:.85rem">warm · premium · editorial</span><span class="sw"><i style="background:#F4F0E8"></i><i style="background:#2A1518"></i><i style="background:#7E2230"></i><i style="background:#241316"></i></span></div>
+<div class="t t-oxblood">
+  <header class="nav"><div class="wrap nav-inner">
+    <a class="logo"><svg viewBox="0 0 24 24"><g stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg><span><b>Aestheria</b> <span>Studio</span></span></a>
+    <nav class="nav-links"><a>Services</a><a>Shop</a><a>Portfolio</a><a>Pricing</a><a>FAQ</a></nav>
+    <div class="nav-cta"><a class="btn btn-ghost">View work</a><a class="btn btn-accent">Get a free website audit</a></div>
+  </div></header>
+  <section class="hero"><div class="wrap hero-grid">
+    <div>
+      <span class="tag-line"><span class="dot"></span>Now booking first clients · free website audit available</span>
+      <h1>Affordable websites &amp; digital design for <span class="u-acc">growing</span> businesses.</h1>
+      <p class="sub">Websites, WhatsApp bots, digital products, branding, and social designs — starting from $9.</p>
+      <div class="hero-btns"><a class="btn btn-primary">Get a free website audit →</a><a class="btn btn-ghost">Visit the shop</a></div>
+      <div class="trust"><div><div class="stars">★★★★★</div><small>Built for local shops, creators, and service businesses</small></div><div class="vline"></div><div><small><b>From $49</b><br>Clear launch pricing</small></div></div>
+    </div>
+    <div>
+      <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><span class="mock-eyebrow">Your new site</span><div class="mock-head">More enquiries,<br><b>less design stress.</b></div><span class="mock-tag">Live in days</span></div></div>
+      <div class="hero-stats"><div class="hstat"><b>5–10d</b><span>average delivery</span></div><div class="hstat"><b>$49</b><span>launch pricing</span></div></div>
+    </div>
+  </div></section>
+  <div class="capstrip"><div class="wrap caprow"><span>Websites</span><i>·</i><span>WhatsApp Bots</span><i>·</i><span>Chat Agents</span><i>·</i><span>E-books</span><i>·</i><span>Templates</span><i>·</i><span>Creative Packs</span><i>·</i><span>Social Media</span><i>·</i><span>Web Apps</span></div></div>
+  <section class="section"><div class="wrap">
+    <div class="shead"><div class="shead-meta"><span class="snum">01</span><span class="slabel">What we do</span></div><h2>Websites, branding, and social posts that get more enquiries.</h2><p>Clear, affordable design support for small businesses that need to launch quickly and look credible.</p></div>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-top"><span class="svc-idx">01 / 04</span><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div></div><h3>Website Design</h3><ul class="svc-list"><li>Landing Pages</li><li>Business Websites</li><li>E-commerce</li><li>Redesigns</li></ul></div>
+      <div class="svc-card"><div class="svc-top"><span class="svc-idx">02 / 04</span><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div></div><h3>Social Media Design</h3><ul class="svc-list"><li>Posts</li><li>Carousels</li><li>Story Templates</li><li>Reels Covers</li></ul></div>
+    </div>
+  </div></section>
+  <section class="section dim"><div class="wrap">
+    <div class="price-label">Website Packages <small>· built for any stage</small></div>
+    <div class="price-grid">
+      <div class="price-card"><div class="pc-name">Starter</div><div class="pc-desc">A clean one-pager to get online fast.</div><div class="amt">$199</div><div class="amt"><small>1–3 pages</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Mobile-friendly</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Contact form</li></ul><a class="btn btn-ghost">Get started</a></div>
+      <div class="price-card feat"><span class="tagpop">Most popular</span><div class="pc-name">Business</div><div class="pc-desc">A full site to win customers.</div><div class="amt">$399</div><div class="amt"><small>up to 5 pages</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Custom layout &amp; branding</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Maps &amp; socials</li></ul><a class="btn btn-accent">Get started</a></div>
+      <div class="price-card"><div class="pc-name">Premium</div><div class="pc-desc">Fully custom, store or advanced.</div><div class="amt">$399+</div><div class="amt"><small>custom build</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Online store / booking</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Priority support</li></ul><a class="btn btn-ghost">Get started</a></div>
+    </div>
+  </div></section>
+  <section class="section"><div class="wrap"><div class="offer"><div class="offer-inner">
+    <div><span class="fire">New client offer</span><h2>Get a <em>free website audit</em> before you spend anything.</h2><ul class="offer-perks"><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free review of your current site</li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free homepage mockup before you pay</li></ul><a class="btn btn-accent">Get my free audit →</a></div>
+    <div class="countdown"><div class="lab">Offer ends in</div><div class="cd-grid"><div class="cd-unit"><div class="num">07</div><div class="u">Days</div></div><div class="cd-unit"><div class="num">12</div><div class="u">Hrs</div></div><div class="cd-unit"><div class="num">45</div><div class="u">Min</div></div><div class="cd-unit"><div class="num">03</div><div class="u">Sec</div></div></div><div class="spots"><b>3 launch-offer spots</b> available this month.</div></div>
+  </div></div></div></section>
+  <footer class="foot"><div class="wrap"><div class="foot-grid">
+    <div><a class="logo"><svg viewBox="0 0 24 24"><g stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg><span><b>Aestheria</b> <span>Studio</span></span></a><p class="foot-about">Big-brand polish, small-business pricing.</p></div>
+    <div class="foot-col"><h5>Services</h5><a>Website Design</a><a>Digital Shop</a><a>Branding</a></div>
+    <div class="foot-col"><h5>Get started</h5><a>Free website audit</a><a>WhatsApp</a><a>Instagram</a></div>
+  </div><div class="foot-bottom">© 2026 Aestheria Studio.</div></div></footer>
+</div>
+
+<!-- ============================ 3 · CHARCOAL & GOLD ============================ -->
+<div class="label"><span class="n">3 · Charcoal &amp; Gold</span><span style="color:rgba(255,255,255,.6);font-size:.85rem">neutral · premium · warm metal</span><span class="sw"><i style="background:#EFEFEC"></i><i style="background:#1B1E22"></i><i style="background:#B07A12"></i><i style="background:#191B1F"></i></span></div>
+<div class="t t-gold">
+  <header class="nav"><div class="wrap nav-inner">
+    <a class="logo"><svg viewBox="0 0 24 24"><g stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg><span><b>Aestheria</b> <span>Studio</span></span></a>
+    <nav class="nav-links"><a>Services</a><a>Shop</a><a>Portfolio</a><a>Pricing</a><a>FAQ</a></nav>
+    <div class="nav-cta"><a class="btn btn-ghost">View work</a><a class="btn btn-accent">Get a free website audit</a></div>
+  </div></header>
+  <section class="hero"><div class="wrap hero-grid">
+    <div>
+      <span class="tag-line"><span class="dot"></span>Now booking first clients · free website audit available</span>
+      <h1>Affordable websites &amp; digital design for <span class="u-acc">growing</span> businesses.</h1>
+      <p class="sub">Websites, WhatsApp bots, digital products, branding, and social designs — starting from $9.</p>
+      <div class="hero-btns"><a class="btn btn-primary">Get a free website audit →</a><a class="btn btn-ghost">Visit the shop</a></div>
+      <div class="trust"><div><div class="stars">★★★★★</div><small>Built for local shops, creators, and service businesses</small></div><div class="vline"></div><div><small><b>From $49</b><br>Clear launch pricing</small></div></div>
+    </div>
+    <div>
+      <div class="mock"><div class="mock-bar"><span></span><span></span><span></span></div><div class="mock-body"><span class="mock-eyebrow">Your new site</span><div class="mock-head">More enquiries,<br><b>less design stress.</b></div><span class="mock-tag">Live in days</span></div></div>
+      <div class="hero-stats"><div class="hstat"><b>5–10d</b><span>average delivery</span></div><div class="hstat"><b>$49</b><span>launch pricing</span></div></div>
+    </div>
+  </div></section>
+  <div class="capstrip"><div class="wrap caprow"><span>Websites</span><i>·</i><span>WhatsApp Bots</span><i>·</i><span>Chat Agents</span><i>·</i><span>E-books</span><i>·</i><span>Templates</span><i>·</i><span>Creative Packs</span><i>·</i><span>Social Media</span><i>·</i><span>Web Apps</span></div></div>
+  <section class="section"><div class="wrap">
+    <div class="shead"><div class="shead-meta"><span class="snum">01</span><span class="slabel">What we do</span></div><h2>Websites, branding, and social posts that get more enquiries.</h2><p>Clear, affordable design support for small businesses that need to launch quickly and look credible.</p></div>
+    <div class="svc-grid">
+      <div class="svc-card"><div class="svc-top"><span class="svc-idx">01 / 04</span><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8"/></svg></div></div><h3>Website Design</h3><ul class="svc-list"><li>Landing Pages</li><li>Business Websites</li><li>E-commerce</li><li>Redesigns</li></ul></div>
+      <div class="svc-card"><div class="svc-top"><span class="svc-idx">02 / 04</span><div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M11 18h2"/></svg></div></div><h3>Social Media Design</h3><ul class="svc-list"><li>Posts</li><li>Carousels</li><li>Story Templates</li><li>Reels Covers</li></ul></div>
+    </div>
+  </div></section>
+  <section class="section dim"><div class="wrap">
+    <div class="price-label">Website Packages <small>· built for any stage</small></div>
+    <div class="price-grid">
+      <div class="price-card"><div class="pc-name">Starter</div><div class="pc-desc">A clean one-pager to get online fast.</div><div class="amt">$199</div><div class="amt"><small>1–3 pages</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Mobile-friendly</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Contact form</li></ul><a class="btn btn-ghost">Get started</a></div>
+      <div class="price-card feat"><span class="tagpop">Most popular</span><div class="pc-name">Business</div><div class="pc-desc">A full site to win customers.</div><div class="amt">$399</div><div class="amt"><small>up to 5 pages</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Custom layout &amp; branding</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Maps &amp; socials</li></ul><a class="btn btn-accent">Get started</a></div>
+      <div class="price-card"><div class="pc-name">Premium</div><div class="pc-desc">Fully custom, store or advanced.</div><div class="amt">$399+</div><div class="amt"><small>custom build</small></div><ul class="pc-feat"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Online store / booking</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>Priority support</li></ul><a class="btn btn-ghost">Get started</a></div>
+    </div>
+  </div></section>
+  <section class="section"><div class="wrap"><div class="offer"><div class="offer-inner">
+    <div><span class="fire">New client offer</span><h2>Get a <em>free website audit</em> before you spend anything.</h2><ul class="offer-perks"><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free review of your current site</li><li><span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>Free homepage mockup before you pay</li></ul><a class="btn btn-accent">Get my free audit →</a></div>
+    <div class="countdown"><div class="lab">Offer ends in</div><div class="cd-grid"><div class="cd-unit"><div class="num">07</div><div class="u">Days</div></div><div class="cd-unit"><div class="num">12</div><div class="u">Hrs</div></div><div class="cd-unit"><div class="num">45</div><div class="u">Min</div></div><div class="cd-unit"><div class="num">03</div><div class="u">Sec</div></div></div><div class="spots"><b>3 launch-offer spots</b> available this month.</div></div>
+  </div></div></div></section>
+  <footer class="foot"><div class="wrap"><div class="foot-grid">
+    <div><a class="logo"><svg viewBox="0 0 24 24"><g stroke-width="2.4" stroke-linecap="round"><path d="M12 3v18"/><path d="M4.2 7.5l15.6 9"/><path d="M19.8 7.5l-15.6 9"/></g></svg><span><b>Aestheria</b> <span>Studio</span></span></a><p class="foot-about">Big-brand polish, small-business pricing.</p></div>
+    <div class="foot-col"><h5>Services</h5><a>Website Design</a><a>Digital Shop</a><a>Branding</a></div>
+    <div class="foot-col"><h5>Get started</h5><a>Free website audit</a><a>WhatsApp</a><a>Instagram</a></div>
+  </div><div class="foot-bottom">© 2026 Aestheria Studio.</div></div></footer>
+</div>
+
+</body>
+</html>
