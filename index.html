@@ -92,8 +92,7 @@ header.nav{position:sticky;top:0;z-index:1000;background:var(--paper);border-bot
 header.nav.scrolled{background:rgba(244,240,232,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--line)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px;gap:1rem;min-width:0}
 .logo{display:flex;align-items:center;gap:.55rem;font-family:var(--font-display);font-weight:700;font-size:1.3rem;letter-spacing:-.025em;min-width:0;flex:0 0 auto}
-.logo .spark{width:26px;height:26px;flex:none;background:var(--accent);-webkit-mask:url(assets/aestheria-mark.png) center/contain no-repeat;mask:url(assets/aestheria-mark.png) center/contain no-repeat}
-footer .logo .spark{background:var(--accent-bright)}
+.logo .spark{height:26px;width:auto;flex:none}
 .logo b{font-weight:700}
 .logo span{color:var(--muted);font-weight:500}
 .logo-text{white-space:nowrap}
@@ -480,7 +479,7 @@ html.js .reveal.in{opacity:1;transform:none}
 <header class="nav" id="nav">
   <div class="wrap nav-inner">
     <a href="#home" class="logo" aria-label="Aestheria Studio home">
-      <span class="spark" aria-hidden="true"></span>
+      <img class="spark" src="assets/logo-oxblood.png" alt="" />
       <span class="logo-text"><b>Aestheria</b> <span>Studio</span></span>
     </a>
     <nav class="nav-links" aria-label="Primary">
@@ -1128,7 +1127,7 @@ html.js .reveal.in{opacity:1;transform:none}
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a href="#home" class="logo"><span class="spark" aria-hidden="true"></span> <span><b>Aestheria</b> <span>Studio</span></span></a>
+        <a href="#home" class="logo"><img class="spark" src="assets/logo-bright.png" alt="" /> <span><b>Aestheria</b> <span>Studio</span></span></a>
         <p class="foot-about">Premium-looking websites, digital products, social creatives, and brand kits for growing businesses. Big-brand polish, small-business pricing.</p>
       </div>
       <div class="foot-col">
